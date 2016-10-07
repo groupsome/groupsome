@@ -1,0 +1,15 @@
+[Unit]
+Description=django-rq daemon
+After=network.target
+
+[Service]
+User=groupsome
+PIDFile=/run/django-rq/pid
+WorkingDirectory=/home/groupsome/sites/{{host}}/source/messengerext
+ExecStart=/home/groupsome/sites/{{host}}/virtualenv/bin/python3 manage.py rqworker default --settings=config.settings{{settings_postfix}}
+PrivateTmp=true
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+
+[Install]
+WantedBy=multi-user.target

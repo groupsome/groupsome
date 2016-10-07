@@ -1,0 +1,127 @@
+.chatlog
+	height: 500px
+	overflow-y: auto
+	background: #ccd6df
+	
+	&.chatlog-embed
+		background: transparent
+	
+.chatlog-item
+	.user-avatar
+		height: 30px
+		width: 30px
+	
+	.chatlog-item-username
+		font-size: 14px
+		line-height: 14px
+		font-weight: 500
+	
+	&.chatlog-item-self
+		text-align: right
+		
+		.chatlog-item-username
+			display: none
+
+.chatlog-item-text, .chatlog-item-file, .chatlog-item-audio
+	.chatlog-item-text-content, .chatlog-item-file-content, .chatlog-item-audio-content
+		box-shadow: 0px 1px 1px #ccc
+		border-radius: 15px
+		padding: 10px
+		background-color: #fff
+		text-align: left
+		display: inline-block
+		min-width: 150px
+		margin-bottom: 5px
+		
+		p
+			margin: 0
+	
+	&.chatlog-item-self
+		.chatlog-item-text-content, .chatlog-item-file-content, .chatlog-item-audio-content
+			background-color: #effdde
+			box-shadow: 0px 1px 1px #a6c8ad
+		
+		.chatlog-item-info, a
+			color: #6cc264
+	
+	.chatlog-item-info
+		color: #777
+		font-size: 12px
+		line-height: 12px
+		height: 12px
+
+.chatlog.chatlog-embed
+	.chatlog-item-text, .chatlog-item-file, .chatlog-item-audio
+		.chatlog-item-text-content, .chatlog-item-file-content, .chatlog-item-audio-content
+			border-top: 1px solid #eee
+			border-left: 1px solid #eee
+			border-right: 1px solid #eee
+
+.chatlog-item-file, .chatlog-item-audio
+	.chatlog-item-file-content, .chatlog-item-audio-content
+		min-width: 250px
+	
+		a
+			font-weight: 500
+	
+	.chatlog-item-file-icon, .chatlog-item-audio-icon
+		height: 50px
+		margin-right: 10px !important
+		
+		.fa
+			background-color: #6cc264
+			border-radius: 30px
+			height: 40px
+			width: 40px
+			font-size: 20px
+			color: #fff
+			line-height: @height
+			text-align: center
+			color: #effdde
+	
+	.chatlog-item-file-filename, .chatlog-item-audio-title
+		font-weight: 500
+	
+	.chatlog-item-file-download
+		font-size: 14px
+		line-height: 14px
+
+.chatlog-item-photo
+	.chatlog-item-photo-content
+		max-height: 200px
+		max-width: 200px
+		border-radius: 15px
+		background-color: #fff
+
+.chatlog-item-video
+	.chatlog-item-video-content
+		max-height: 200px
+		max-width: 200px
+		border-radius: 15px
+		background-color: #fff
+		display: inline-block
+		
+		img
+			border-radius: 15px
+			max-height: 200px
+			max-width: 200px
+
+.chatlog-item-audio
+	.chatlog-item-username
+		margin-bottom: 10px !important
+	.audiobutton
+		height: 30px
+
+.chatlog-item-sticker
+	.chatlog-item-sticker-content
+		max-height: 200px
+		max-width: 200px
+
+.chatlog-pager
+	text-align: center
+	
+	&.chatlog-pager-newer
+		margin-top: 10px
+	
+	&.chatlog-pager-older
+		margin-bottom: 10px

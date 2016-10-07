@@ -1,0 +1,114 @@
+{% extends "_landingpage.html" %}
+{% load i18n staticfiles %}
+
+{% block title %}groupsome - Login{% endblock %}
+{% block body_classes %}landingpage login{% endblock %}
+
+{% block content %}
+  <h1 class="hidden-sm hidden-xs"> <img class="logo-image" height="90px" src="{% static "img/gsLogo.svg" %}"/><img class="logo-text" height="80px" src="{% static "img/gsTextWhite.svg" %}"/> </h1>
+
+  <div class="container" id="loginDiv">
+      <form class="form-signin" method="post" data-url="{% url 'accounts:token' token=login_token.token %}" data-redirect="{% url 'home:home' %}">
+        {% csrf_token %}
+          <div class="formDiv">
+            <h2 class="form-signin-heading">{% trans "Please sign in" %}</h2>
+            <label for="id_login" class="sr-only">{% trans "Username" %}</label>
+            <input type="text" id="id_login" name="username" class="form-control" placeholder="{% trans "Username" %}" required autofocus>
+            <label for="id_password" class="sr-only">{% trans "Password" %}</label>
+            <input type="password" id="id_password" name="password" class="form-control" placeholder="{% trans "Password" %}" required>
+
+            {% if messages %}
+
+              {% for message in messages %}
+                {% if message.extra_tags %}
+                     <div class="{{ message.extra_tags }}">
+                         {{ message }}
+                     </div>
+                {% endif %}
+              {% endfor %}
+
+            {% endif %}
+
+            <input class="btn btn-block btn-lg btn-primary" type="submit" id="submit" value="{% trans "Submit" %}">
+            <a data-toggle="modal"  href="#myModal">{% trans "Forgot password?" %} </a>
+            <div class="hidden-sm hidden-xs">
+
+                <br/>
+
+                <span>{% trans "... or scan with your phone" %}</span>
+                <br>
+                <br>
+                <a href="{{ login_token.get_url }}">
+                  <div class="qrcode" data-code="{{ login_token.get_scan_url }}"></div>
+                </a>
+            </div>
+            <div class="visible-sm visible-xs">
+              <br/><br/>
+              {% trans "... or authenticate directly using Telegram" %}
+              <a href="{{ login_token.get_url }}" class="btn btn-primary btn-block btn-lg">{% trans "Open Telegram App &amp; Login" %}</a>
+            </div>
+          </div>
+          <div class="registerDiv hidden-sm hidden-xs " >
+
+              <h2 class="form-signin-heading">{% trans "No Groupsome user?" %}</h2>
+
+              <div class="registerTextDiv">
+                {% trans "If you want to learn how to register or learn more about Groupsome, click the Button below... " %}
+              </div>
+
+              <a href="{% url 'pages:landing' %}#register" class="btn btn-block btn-lg btn-primary">{% trans "Learn more" %} </a>
+
+              <br/>
+
+              <h2 class="form-signin-heading form-signin-heading-spacing">{% trans "Get to know us!" %}</h2>
+
+              <div class="registerTextDiv">
+                {% trans "You can contact our bot directly on telegram. " %}
+              </div>
+
+              <a href="https://telegram.me/{{TELEGRAM_BOT_USERNAME}}" class="space btn btn-block btn-lg btn-primary">{% trans "Contact our bot" %}</a>
+          </div>
+      </form>
+      <br/>
+      <br/>
+      <div class="registerDivMobil visible-sm visible-xs" >
+            <div>
+              {% trans "No Groupsome user?" %}
+              <br/>
+              <div class="registerTextDiv">
+                {% trans "If you want to learn how to register or learn more about Groupsome, click the Button below... " %}
+              </div>
+
+              <a href="{% url 'pages:landing' %}#register" class="btn btn-block btn-lg btn-primary">{% trans "Learn more" %} </a>
+            </div>
+      </div>
+
+      <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">{% trans "How to reset your password" %}</h4>
+        </div>
+        <div class="modal-body">
+          <p>{% trans "To reset your password contact our groupsome Bot on Telegram. Tell him that you forgot your password or type <b>/newpassword</b> and he will send you a new one." %}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">{% trans "Ok, I got it" %}</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+{% endblock %}
+
+{% block javascript %}
+  {{block.super}}
+  <script src="{% static "vendor-js/jquery-qrcode.min.js" %}"></script>
+  <script src="{% static "js/login.js" %}"></script>
+  <script src="{% static "vendor-js/grayscale.js" %}"></script>
+{% endblock %}

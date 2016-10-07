@@ -1,0 +1,10 @@
+{% extends "_errorpage.html" %}
+{% load i18n %}
+
+{% block errorNumber %}
+400
+{% endblock %}
+
+{% block errorText %}
+{% trans "We are sorry, your request is invalid!" %}
+{% endblock %}

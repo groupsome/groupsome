@@ -1,0 +1,82 @@
+{% extends "_base.html" %}
+{% load i18n staticfiles %}
+
+{% block title %} groupsome - {% trans "Surveys" %} {% endblock %}
+
+
+{% block content %}
+<div class="surveys container">
+
+    <div class="btn-group survey-select"  data-toggle="buttons"  >
+        <label class="btn btn-default active" id="id_open" title="{% trans "Show open surveys" %}">
+            <input type="radio" name="sur" value="open" checked autocomplete="off" /> <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> {% trans "Open" %}
+        </label>
+        <label class="btn btn-default" id="id_closed" title="{% trans "Show closed surveys" %}">
+            <input type="radio" name="sur" value="close" autocomplete="off" /> <span class="glyphicon glyphicon-check" aria-hidden="true"></span> {% trans "Closed" %}
+        </label>
+    </div>
+
+    <a class="btn btn-default visible-sm visible-md visible-lg newSurvey" id="new-Survey-lg" data-toggle="modal" href="#CreateSurvey">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {% trans "New Survey" %}
+    </a>
+
+    <a class="btn btn-default hidden-sm hidden-md hidden-lg newSurvey" href="{% url 'surveys:create_survey' %}">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    </a>
+    <br>
+    <br>
+    <div id='surveylist'>
+        {% if surveys %}
+
+                {% for survey in surveys %}
+                    <div data-survey-id="{{survey.id}}" class="panel panel-default survey-list{% if survey.status == "open" %} open-survey {% else %} closed-survey {% endif %}">
+                        {% include "surveys/surveylist.html" with survey=survey votes=votes notvoted=notvoted user=user %}
+                    </div>
+                {% endfor %}
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+            {% else %}
+            <div class="feed-placeholder">
+                <div class="alert alert-info">
+                    <p>{% trans "No surveys in your groups! Take your phone and create a /newsurvey" %}</p>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+
+    <div class="modal fade" id="CreateSurvey" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+              {% include "surveys/assets/create_survey_content.html" with user_groups=user_groups %}
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editSurvey" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

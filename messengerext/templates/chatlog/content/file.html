@@ -1,0 +1,17 @@
+{% extends "chatlog/content/_base.html" %}
+{% load i18n %}
+
+{% block item_content %}
+	<div class="chatlog-item-file-content">
+		<p class="chatlog-item-username">{{ item.user.username }}</p>
+		<p class="chatlog-item-file-icon pull-left"><i class="fa fa-{{ item.icon_alt }}"></i></p>
+		<div>
+			<p class="chatlog-item-file-filename">{{ item.file_name }}</p>
+			<a href="{{ item.media_url }}" class="chatlog-item-file-download" download>{% trans "Download" %}</a>
+		</div>
+		<p class="chatlog-item-info pull-right">
+			<span data-livestamp="{{ item.timestamp|date:"c" }}"></span>
+			<span class="timestamp hidden">{{ item.timestamp|date:"Y-m-d-H:i:s" }}</span>
+		</p>
+	</div>
+{% endblock %}

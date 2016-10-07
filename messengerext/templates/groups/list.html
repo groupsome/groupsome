@@ -1,0 +1,15 @@
+{% extends "_base.html" %}
+{% load i18n staticfiles compress %}
+
+{% block content %}
+	<div class="container">
+		{% for group in groups %}
+			<a href="{{ group.url }}" class="panel panel-default group-preview{% if group.description %} has-description{% endif %}" style="background-image: url({{ group.header_media_url }});">
+				<h1>{{ group.name }}</h1>
+				{% if group.description %}
+					<p>{{ group.description }}</p>
+				{% endif %}
+			</a>
+		{% endfor %}
+	</div>
+{% endblock %}

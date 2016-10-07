@@ -1,0 +1,224 @@
+section.group
+	header
+		background: url("group-header.jpg")
+		background-repeat: no-repeat
+		background-size: cover
+		color: #fff
+		
+		.header-text
+			display: table
+			width: 100%
+			height: 200px
+			font-family: Lato
+			
+			h1
+				font-size: 40px
+				margin-bottom: 10px
+			
+			p
+				font-size: 18px
+			
+			
+		.header-text-inner
+			height: 100%
+			display: table-cell
+			vertical-align: bottom
+		
+		.navbar
+			z-index: 0
+			background: rgba(0, 0, 0, 0.4) !important
+			
+			a
+				color: #fff !important
+			
+			li.active a
+				background: rgba(0, 0, 0, 0.4) !important
+		
+		.navbar-nav
+			margin: 0
+		
+		//.navbar .container
+		//	padding: 0
+		
+		.navbar-nav li a
+			padding: 15px
+		
+		.navbar-nav>li, .navbar-nav
+			float: left !important
+
+		.navbar-nav.navbar-right:last-child
+			margin-right: -15px !important
+
+		.navbar-right
+			float: right !important
+	
+	.page-header
+		margin-top: 0
+		margin-bottom: 10px
+		
+		p
+			margin-bottom: 0
+
+.group-content section
+	margin-bottom: 20px
+
+.group-sidebar
+	> .panel
+		border-radius: 3px
+		border-color: rgba(0, 0, 0, 0.06)
+		
+		.panel-heading
+			background: transparent !important
+			border: none
+			font-family: Lato
+			font-size: 25px
+			padding-bottom: 0
+
+.panel.group-members
+	.avatar
+		padding: 5px
+		height: 50px
+		width: 50px
+
+.group-preview
+	display: block
+	background-repeat: no-repeat
+	background-size: cover
+	color: #fff
+	padding: 20px
+	font-family: Lato
+	
+	&:hover, &:active, &:focus
+		color: #fff
+		text-decoration: none
+	
+	h1
+		margin-bottom: 20px
+	
+	&.has-description
+		h1
+			margin-bottom: 0
+	
+	p
+		margin-bottom: 0
+
+.event.icon
+	font-size: 0.8em
+	display: block
+	position: relative
+	width: 35px
+	height: 40px
+	background-color: #666666
+	overflow: hidden
+	padding: 4px
+	float: left
+	margin-top: 5px
+	*
+		display: block
+		width: 100%
+		font-size: 0.8em
+		font-style: normal
+		text-align: center
+	span
+		font-size: 1.3em
+		letter-spacing: -0.05em
+		color: #ffffff
+	strong
+		background-color: #ffffff
+		letter-spacing: -0.05em
+		color: #666666
+
+
+.event-name
+	font-size: 1.1em
+	margin-left: 10px
+
+.event-details
+	font-size: 0.9em
+	margin-left: 10px
+
+.survey-panel
+	padding-left: 25px
+
+.survey-link
+	color: #333
+	outline: 0
+
+	&:hover , &:active , &:focus
+		color: #333
+		outline: 0
+
+.survey.icon
+	display: block
+	position: relative
+	width: 35px
+	height: 40px
+	overflow: hidden
+	padding: 4px
+	float: left
+	margin-top: 5px
+	*
+		display: block
+		width: 100%
+		font-style: normal
+		text-align: center
+		font-size: 23px
+		color: #666
+
+
+.numberCircle
+	border-radius: 50%;
+	width: 34px;
+	height: 34px;
+	display: inline-block
+	background: #666
+	border: 2px solid #666
+	color: white
+	text-align: center
+	font-size: 21px
+	font-weight: bold
+	vertical-align: middle
+	margin-right: 2px
+	margin-bottom: 4px;
+
+.survey-question
+	font-size: 1.1em
+	font-weight: bold
+	margin-left: 10px
+
+.survey-details
+	margin-top: -6px
+	font-size: 0.9em
+	margin-left: 10px
+
+@media screen and (max-width: 991px)
+	.group-content
+		width: 100%
+	.group-sidebar
+		display: none
+
+.group-admin-list
+	margin-bottom: 5px
+
+.group-members
+	a:hover
+		text-decoration: none
+
+.group-settings-form
+	#id_admins .checkbox
+		padding-top: 0
+	#id_admins .checkbox:first-child
+		padding-top: 7px
+	#id_admins label
+		display: block
+		padding: 10px 15px
+		padding-left: 35px
+		border: 1px solid #ddd
+		max-width: 250px
+		margin-bottom: -1px
+	#id_admins .checkbox:last-child label
+		border-bottom-right-radius: 4px
+		border-bottom-left-radius: 4px
+	#id_admins .checkbox:first-child label
+		border-top-left-radius: 4px
+		border-top-right-radius: 4px

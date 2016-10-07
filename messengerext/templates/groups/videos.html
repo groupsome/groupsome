@@ -1,0 +1,36 @@
+{% extends "groups/_base.html" %}
+{% load i18n staticfiles compress ifrole %}
+
+{% block group_content %}
+	<div class="page-header" id="video-header">
+		<h2>Videos</h2>
+	</div>
+	{% if videos %}
+		<video class="" id="groupVideo" controls src=""></video>
+		<div class="video-list-small video-scrollbar">
+			{% for video in videos %}
+				{% include "groups/video_small.html" with obj=video %}
+			{% endfor %}
+		</div>
+		<br/>
+		<br/>
+		<br/>
+
+	{% else %}
+		<div class="feed-placeholder">
+			<div class="alert alert-info">
+				<p>
+					{% trans "It looks so empty here =(" %}
+				</p>
+				<p>
+					{% trans "Post something in this group" %}
+				</p>
+			</div>
+		</div>
+	{% endif %}
+{% endblock %}
+
+{% block javascript %}
+	{{ block.super }}
+	<script src="{% static "js/videos.js" %}"></script>
+{% endblock %}

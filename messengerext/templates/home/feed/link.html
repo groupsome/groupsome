@@ -1,0 +1,24 @@
+{% extends "home/feed/_base.html" %}
+{% load i18n %}
+
+{% block item_type %}link{% endblock %}
+
+{% block item_action_text %}{% trans "posted a link to" %}{% endblock %}
+{% block item_action_text_without_group %}{% trans "posted a link" %}{% endblock %}
+
+{% block item_media %}
+	<a href="{{ obj.url }}" class="item-media" rel="noopener noreferrer" target="_blank">
+		{% if obj.file %}
+			<img src="{{obj.link_preview_media_url}}" alt="">
+		{% endif %}
+		<h4>
+			<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> <span class="shorten-text-link">{{obj.title}}</span>
+		</h4>
+	</a>
+{% endblock %}
+
+{% block item_description %}
+	{% if obj.description %}
+		<p class="item-description">{{ obj.description }}</p>
+	{% endif %}
+{% endblock %}

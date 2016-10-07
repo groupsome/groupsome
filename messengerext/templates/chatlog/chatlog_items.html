@@ -1,0 +1,15 @@
+{% for item in feed %}
+	{% if item.type == "text" %}
+		{% include "chatlog/content/text.html" with item=item content=content %}
+	{% elif item.type == "photo" %}
+		{% include "chatlog/content/photo.html" with item=item content=content %}
+	{% elif item.type == "sticker" %}
+		{% include "chatlog/content/sticker.html" with item=item content=content %}
+	{% elif item.type == "file" %}
+		{% include "chatlog/content/file.html" with item=item content=content %}
+	{% elif item.type == "audio" %}
+		{% include "chatlog/content/audio.html" with item=item content=content %}
+	{% elif item.type == "video" %}
+		{% include "chatlog/content/video.html" with item=item content=content %}
+	{% endif %}
+{% endfor %}

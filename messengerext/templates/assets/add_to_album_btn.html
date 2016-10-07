@@ -1,0 +1,24 @@
+{% load i18n %}
+{% if albums %}
+    <div class="btn-group dropup pull-right manage-album-btn">
+        <div type="button"
+             title="{% trans "add image to another album" %}"
+             class="dropdown-toggle"
+             data-toggle="dropdown"
+             aria-haspopup="true"
+             aria-expanded="false">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            <span class="sr-only">Toggle Dropdown</span>
+        </div>
+        <ul class="dropdown-menu add-to-album-menu">
+            <div class="dropdown-heading">{% trans "Add image to album:" %}</div>
+            <div class="divider"></div>
+            {% for album in albums %}
+            <li onclick="addImageToAlbum('{{album.id}}','{{obj.id}}')">
+                {% csrf_token %}
+                {{album.name}}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

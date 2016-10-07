@@ -1,0 +1,72 @@
+{% extends "groups/_base.html" %}
+{% load i18n staticfiles compress ifrole %}
+
+
+{% block title %}{% trans "Links" %} - {{ block.super }}{% endblock %}
+
+{% block group_content %}
+	<div class="section group-links">
+		<div class="page-header">
+			<h2>{% trans "Links" %}</h2>
+		</div>
+
+		{% if links %}
+		<table class="table link-table">
+			<thead>
+				<tr>
+					<th class="column-name" colspan="2">{% trans "Title" %}</th>
+					<th class="column-uploaded">{% trans "Posted" %}</th>
+					<th class="column-actions"></th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for link in links %}
+					<tr class="link" data-link-id="{{ link.id }}">
+						<td class="column-icon">
+							<a href="{{ link.url }}">
+							{% if link.file %}
+								<img src="{{link.link_preview_media_url}}" class="column-icon">
+							{% else %}
+								<i class="fa fa-external-link" aria-hidden="true"></i>
+							{% endif %}
+							</a>
+						</td>
+						<td class="column-name">
+								<a href="{{ link.url }}"> {{link.title}}</a>
+						</td>
+						<td class="column-uploaded">
+							<span data-livestamp="{{ link.timestamp|date:"c" }}"></span> {% trans "by" %}
+							{% if link.user.first_name %}
+							{{link.user.first_name}}{% else %}{{link.user.username}}{% endif %}</td>
+						</td>
+						<td class="column-actions">
+							{% ifrole "admin" %}
+								<i class="fa fa-trash delete-button link-delete-btn" data-group-id="{{ group.id }}" data-link-id="{{ link.id }}"></i>
+							{% endifrole %}
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<br/>
+		<br/>
+
+		{% else %}
+		<div class="feed-placeholder">
+			<div class="alert alert-info">
+				<p>
+					{% trans "It looks so empty here =(" %}
+				</p>
+				<p>
+					{% trans "Post something in this group" %}
+				</p>
+			</div>
+		</div>
+	{% endif %}
+	</div>
+{% endblock %}
+
+{% block javascript %}
+	{{ block.super }}
+	<script src="{% static "js/links.js" %}"></script>
+{% endblock %}

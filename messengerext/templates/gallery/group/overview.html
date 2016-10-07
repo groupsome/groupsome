@@ -1,0 +1,59 @@
+{% extends "groups/_base.html" %}
+{% load i18n staticfiles compress ifrole %}
+
+{% block title %}{% trans "Photos" %} - {{ block.super }}{% endblock %}
+
+{% block group_content %}
+		<section class="group-photo-albums">
+			<div class="page-header">
+				<h2>{% trans "Albums" %}</h2>
+			</div>
+				
+			<div class="album-list album-list-small">
+				{% for album in albums %}
+					<div class="item album">
+						<div class="album-cover-wrapper">
+							<a class="album-cover" href="{% url 'groups:photo_album' group_id=group.id album_id=album.id %}" style="background-image: url({{ album.photo_file }});"></a>
+						</div>
+						<h3 class="shorten-group-name">{{ album.name }}</h3>
+						<div class="album-info">
+							{% ifrole "admin" %}
+								<a href="#" class="pull-right" data-post="{% url 'groups:photo_overview' group_id=group.id %}" data-confirm="{% trans 'Do you really want to delete this album?' %}" data-body='{"album_id": {{ album.id }}, "delete_album": true}'><i class="fa fa-trash"></i></a>
+							{% endifrole %}
+							
+							<div class="shorten-album-scription">{% if album.description != "" %}{{ album.description }} - {% endif %}{% blocktrans with count=album.photo_count %}{{ count }} picture(s){% endblocktrans %}</div>
+						</div>
+					</div>
+				{% endfor %}
+				
+				{% ifrole "admin" %}
+					{% include "gallery/assets/create_album.html" with group=group albums=albums %}
+				{% endifrole %}
+			</div>
+		</section>
+	<section class="group-photo-list">
+		<div class="page-header">
+			<h2>{% trans "Photos" %}</h2>
+		</div>
+		{% if photos %}
+		<div class="photo-list photo-list-small">
+			{% for photo in photos %}
+				{% include "gallery/album_content/photo_small.html" with photo=photo albums=albums group=group %}
+			{% endfor %}
+		</div>
+		{% else %}
+		<div class="feed-placeholder">
+			<div class="alert alert-info">
+				<p>
+					{% trans "It looks so empty here =(" %}
+				</p>
+				<p>
+					{% trans "Post something in this group" %}
+				</p>
+			</div>
+		</div>
+		{% endif %}
+	</section>
+	<br/>
+	<br/>
+{% endblock %}

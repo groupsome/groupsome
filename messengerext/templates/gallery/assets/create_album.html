@@ -1,0 +1,16 @@
+{% load i18n %}
+<div id="create-album" style="height:252px;" class="item album">
+    <form method="post">
+        <label for="group-selection">{% trans "Create album" %}</label>
+        <input value="{{group.id}}" name='album_group' class="hidden" id="group-selection">
+        {% csrf_token %}
+        <input type="text" class="form-control" id="input-new-album-name"
+               name="album_name" placeholder="{% trans 'New Album' %}">
+        <input type="text" class="form-control" id="input-new-album-description"
+               name="album_description" placeholder="{% trans 'description' %}">
+        <label for="submitNewAlbum" class="btn">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </label>
+        <input id="submitNewAlbum" type="submit" value="true" name="new_album" class="hidden" >
+    </form>
+</div>

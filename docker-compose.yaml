@@ -1,0 +1,31 @@
+version: "2"
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/nginx.Dockerfile
+    ports:
+      - 80
+    links:
+      - django
+    volumes_from:
+      - django
+  django:
+    build:
+      context: .
+      dockerfile: docker/django.Dockerfile
+    environment:
+      TELEGRAM_BOT_USERNAME: ${TELEGRAM_BOT_USERNAME}
+      TELEGRAM_TOKEN: ${TELEGRAM_TOKEN}
+      MYSQL_PASSWORD: groupsome-database-pw
+    links:
+       - db
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: groupsome-root-pw
+      MYSQL_DATABASE: groupsome
+      MYSQL_USER: groupsome
+      MYSQL_PASSWORD: groupsome-database-pw
+  redis:
+    image: redis

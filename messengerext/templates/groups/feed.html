@@ -1,0 +1,24 @@
+{% extends "groups/_base.html" %}
+{% load i18n staticfiles compress %}
+
+{% block group_content %}
+	{% if feed_list %}
+		<div class="group-feed feed" data-endless-paginate="true">
+			{% include "home/feed.html" %}
+		</div>
+		<br/>
+		<br/>
+		<br/>
+	{% else %}
+		<div class="feed-placeholder">
+			<div class="alert alert-info">
+				<p>
+					{% trans "It looks so empty here =(" %}
+				</p>
+				<p>
+					{% trans "Post something in this group" %}
+				</p>
+			</div>
+		</div>
+	{% endif %}
+{% endblock %}

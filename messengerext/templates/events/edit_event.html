@@ -1,0 +1,18 @@
+{% extends "_base.html" %}
+{% load i18n staticfiles %}
+
+{% block stylesheets %}
+{{block.super}}
+<link rel="stylesheet" href="{% static "vendor-css/datepicker.css" %}" >
+<link rel="stylesheet" href="{% static "vendor-css/bootstrap-timepicker.min.css" %}" >
+{% endblock %}
+
+
+{% block title %} groupsome - {% trans "Edit Event" %} {% endblock %}
+
+
+{% block content %}
+
+{% include "events/assets/edit_event_content.html"%}
+
+{% endblock %}

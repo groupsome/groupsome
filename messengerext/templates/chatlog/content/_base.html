@@ -1,0 +1,11 @@
+<div class="media chatlog-item chatlog-item-{{ item.type }}{% if item == content %} chatlog-item-selected{% endif %}{% if item.user == request.user %} chatlog-item-self{% endif %}" data-content-type="{{ item.type }}" data-content-id="{{ item.id }}">
+	{% if item.user != request.user %}
+		<div class="media-left">
+			<img src="{{ item.user.telegramuser.avatar_url }}" alt="" class="user-avatar img-circle" />
+		</div>
+	{% endif %}
+	
+	<div class="media-body">
+		{% block item_content %}{% endblock %}
+	</div>
+</div>

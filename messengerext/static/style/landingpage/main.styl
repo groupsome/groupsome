@@ -1,0 +1,23 @@
+body.landingpage
+	@import "navbar.styl"
+	@import "login.styl"
+
+	&.landingpage-index
+		background: url(../img/background.jpg)
+		background-size: cover
+		background-position: center center
+		background-attachment: fixed
+		
+		.intro
+			background: transparent
+		
+		.navbar
+			background: rgba(0, 0, 0, 0.8) !important
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+	body.landingpage.landingpage-index
+		background-image: url(../img/background@2x.jpg)
+
+
+div#faq>h4
+	margin-bottom: 5px

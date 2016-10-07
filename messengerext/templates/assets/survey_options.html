@@ -1,0 +1,18 @@
+{% load i18n %}
+
+<div class="btn-group survey-options">
+    <button class="btn btn-link dropdown-toggle dropdown-options" data-toggle="dropdown"><i class="fa fa-caret-down"></i></button>
+    <ul class="options-dropdown dropdown-menu dropdown-menu-right">
+        {% if survey.status == "open"  %}
+            <li><a href="#" class="survey-resend-btn" data-survey-id="{{ survey.id }}"> <div style="margin-right:5px;" class="glyphicon glyphicon-send"> </div> {% trans " Resend" %}</a></li>
+            <li><a class="hidden-lg" href="./{{survey.id}}/edit_survey"> <div style="margin-right:5px;" class="glyphicon glyphicon-edit"> </div> {% trans " Edit" %}</a>
+                <a class="visible-lg edit-modal survey-edit-btn" data-survey-id="{{survey.id}}" data-toggle="modal" href="#editSurvey"> <div style="margin-right:5px;" class="glyphicon glyphicon-edit"> </div>{% trans " Edit" %} </a>
+            </li>
+            <li><a href="#" class="survey-close-btn" data-survey-id="{{ survey.id }}"> <div style="margin-right:5px;" class="glyphicon glyphicon-ban-circle"> </div> {% trans " Close" %}</a></li>
+        {% endif %}
+        {% if survey.status == "closed"  %}
+            <li><a href="#" class="survey-send-result-btn" data-survey-id="{{ survey.id }}"> <div style="margin-right:5px;" class="glyphicon glyphicon-send"> </div> {% trans " Send" %}</a></li>
+        {% endif %}
+        <li><a href="#" class="survey-delete-btn" data-survey-id="{{ survey.id }}"> <div style="margin-right:5px;" class="glyphicon glyphicon-trash"> </div> {% trans " Delete" %}</a></li>
+    </ul>
+</div>

@@ -1,0 +1,35 @@
+{% extends "groups/_base.html" %}
+{% load i18n staticfiles compress ifrole %}
+
+{% block group_content %}
+	<div class="page-header">
+		<h2>Audios</h2>
+	</div>
+	{% if audios %}
+		<div class="group-feed">
+			{% for audio in audios %}
+				{% include "groups/audio_small.html" with obj=audio %}
+			{% endfor %}
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+		</div>
+	{% else %}
+		<div class="feed-placeholder">
+			<div class="alert alert-info">
+				<p>
+					{% trans "It looks so empty here =(" %}
+				</p>
+				<p>
+					{% trans "Post something in this group" %}
+				</p>
+			</div>
+		</div>
+	{% endif %}
+{% endblock %}
+
+{% block javascript %}
+	{{ block.super }}
+	<script src="{% static "js/audios.js" %}"></script>
+{% endblock %}

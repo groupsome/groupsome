@@ -1,0 +1,13 @@
+{% load i18n %}
+<audio id="audio-{{obj.id}}" src="{{obj.media_url}}" data-audio-id="{{ obj.id }}" data-duration="{{ obj.duration_sec }}">
+    {%trans "Your browser does not support audio" %}
+</audio>
+<div class="audiocontrols" data-audio-id="{{ obj.id }}">
+    <button id="playbtn-{{obj.id}}" class="audiobutton audio-play-button">
+        <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+    </button>
+    <progress id="audio-progress-{{obj.id}}" class="audio-progress" value="0" max="100"></progress>
+    <button id="mutebtn-{{obj.id}}" class="audiobutton audio-mute-button">
+        <span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
+    </button>
+</div>

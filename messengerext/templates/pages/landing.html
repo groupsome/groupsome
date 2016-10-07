@@ -1,0 +1,235 @@
+﻿{% load i18n staticfiles compress %}
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+        
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/static/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/static/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/static/favicons/manifest.json">
+    <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/static/favicons/favicon.ico">
+    <meta name="msapplication-config" content="/static/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+        
+    {% block style %}
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "vendor-css/bootstrap.min.css" %}" rel = "stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static "vendor-css/grayscale.css" %}" rel="stylesheet">
+    <link href="{% static "vendor-css/dark-top-cookieconsent.css" %}" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="{% static "font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static "style/main.css" %}" />
+    {% endblock %}
+
+
+    {% block title %} <title>groupsome</title> {% endblock %}
+</head>
+
+<body id="page-top" class="landingpage landingpage-index" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-toggle" href="{% url 'accounts:login' %}">{% trans "Login" %}</a>
+
+            <a class="navbar-brand page-scroll" href="#page-top">
+                <img class="navbar-logo" src="{% static "img/gsLogoWhite.svg" %}"/><img class ="navbar-brand-text"src="{% static "img/gsTextWhite.svg" %}"/>
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" id="login-link" href="{% url 'accounts:login' %}">{% trans "Login" %}</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#about">{% trans "About" %}</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#register">{% trans "Register" %}</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact">{% trans "Contact" %}</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Intro Header -->
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading">groupsome</h1>
+                    <p class="intro-text">{% trans "Manage and view your Telegram groups contents!" %}</p>
+                    <a href="#about" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="about" class="about-offset container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>{% trans 'About groupsome' %}</h2>
+            <p>{% trans "Groupsome offers the brilliant opportunity to manage and view content from your Telegram groups in a web application:" %} <br>
+            </p>
+            <p>
+                <div class="ul-center">
+                    <div>
+                        <ul>
+                            <li >{% trans "view recently posted content in a feed" %} </li>
+                            <li>{% trans "view photos and corresponding comments or create albums" %} </li>
+                            <li>{% trans "collect your videos, files, audios and links" %} </li>
+                            <li>{% trans "start events, share whether or not you attend and be reminded" %} </li>
+                            <li>{% trans "view all personal events in a calendar" %} </li>
+                            <li>{% trans "initiate group surveys, vote and view the results" %} </li>
+                        </ul>
+                    </div>
+                </div>
+            </p>
+            <div class="screenshots">
+                <img src="{% static "img/screenshots/survey.png" %}" alt="" /><img src="{% static "img/screenshots/survey_online.png" %}" alt="" /><img src="{% static "img/screenshots/event.png" %}" alt="" />
+            </div>
+            <button id="btn-faq" class="btn btn-lg btn-primary" data-toggle="collapse" data-target="#faq"><i class="fa fa-question"></i> {% trans 'FAQ' %}</button>
+            <div id="faq" class="collapse">
+            <br/>
+            <br/>
+
+            <h4>{% trans 'Q: Who is it for?' %}</h4>
+            <p> {% trans "Groupsome is for everyone who wants to manage his chat groups more efficiently." %}
+                {% trans "It delivers the features you know from your preferred social network to your private chat groups." %}
+                {% trans "You have one group for your football team, one for your fellow students and one for your family? We help you aggregate and manage them all properly." %}
+
+            </p>
+
+            <h4>{% trans 'Q: How to get started?' %}</h4>
+            <p> {% trans "Just invite @groupsomebot to your groups in telegram." %}
+                {% trans "Every participant in the group who wants to use our great service just needs to send a private message to @groupsomebot. It's  that simple." %}
+            </p>
+
+             <h4>{% trans 'Q: Is my content safe?' %}</h4>
+            <p> {% trans "We do everything we can to assure your content is safe." %}
+                {% trans "So we double check if you are allowed to access content, even if you know the direct link for it." %}
+            </p>
+
+            <h4>{% trans 'Q: Why should I trust you?' %}</h4>
+            <p> {% trans "We do not earn money with this project. We just have fun in web development." %}
+                {% trans "If you want to check security yourself: We're open source, you can check our code on github, see below " %}
+            </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Register Section -->
+<section id="register" class="register-offset content-section text-center">
+    <div class="register-section">
+        <div class="container">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>{% trans 'Register' %}</h2>
+                <p>{% trans "To register for our service, contact our groupsome bot on Telegram in a private chat." %}
+                {% trans "He will add you as a user and will grant further information about the login." %} <br>
+                {% trans "To use our service for a group just invite our groupsome bot in your group or click the button below on your smartphone." %}
+                {% trans "The bot automatically provides the content for you at the web application." %} </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://telegram.me/{{TELEGRAM_BOT_USERNAME}}" class="btn btn-lg btn-primary"><i class="fa fa-paper-plane-o"></i> {% trans "Contact our bot" %}</a><span>   </span>
+                    </li>
+
+                    <li>
+                        <a href="https://telegram.me/{{TELEGRAM_BOT_USERNAME}}?startgroup=group" class="btn btn-lg btn-primary"> <i class="fa fa-plus"></i> {% trans "invite our bot" %}</a>
+                    </li>
+                </ul>
+                <br> <br> <br> <br> <br>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>{% trans 'Contact' %}</h2>
+            <p> {% trans "Groupsome is an open source project developed by students of the Friedrich-Alexander-University Erlangen-Nürnberg." %} <br>
+            {% trans "The project is in progress and some features will be added in the future." %} </p>
+            <ul class="list-inline banner-social-buttons">
+                <li>
+                    <a href="mailto:service.groupsome@gmail.com" class="btn btn-lg btn-primary"><i class="fa fa-share"></i>
+                        <span class="network-name">{%trans "Contact us" %}</span></a>
+                </li>
+                    <li>
+                        <a href="https://github.com/groupsome/groupsome" class="btn btn-lg btn-primary"><i class="fa fa-github fa-fw"></i>
+                            <span class="network-name">Github</span></a>
+                    </li>
+                <li>
+                    <a href="{% url 'pages:legal_notice' %}" class="btn btn-lg btn-primary">
+                        <i class="fa fa-book fa-fw"></i>
+                        <span class="network-name">{% trans "Legal Information" %}</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+    <div class="container text-center">
+        <p>Copyright &copy; groupsome 2016</p>
+    </div>
+</footer>
+
+
+{% block javascript %}
+{% compress js %}
+    <!-- jQuery -->
+    <script src="{% static "vendor-js/jquery.js" %}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static "vendor-js/bootstrap.min.js" %}"></script>
+    <!-- Plugin JavaScript -->
+    <script src="{% static "vendor-js/jquery.easing.min.js" %}"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static "vendor-js/grayscale.js" %}"></script>
+    <script src="{% static "js/cookieconsent.js" %}"></script>
+{% endcompress %}
+
+<script type="text/javascript" src="{% static "vendor-js/cookieconsent.js" %}" id="cookieconsent-script" data-message="{% trans "This website uses cookies to ensure you get the best experience on our website" %}" data-dismiss="{% trans "Got it!" %}" data-learn-more="{% trans "More info" %}" data-link="/legal_notice" data-theme="{% static "vendor-css/dark-top-cookieconsent.css" %}"></script>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+{% endblock %}
+
+</body>
+
+</html>

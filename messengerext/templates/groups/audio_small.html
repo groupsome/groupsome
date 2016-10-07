@@ -1,0 +1,33 @@
+{% extends "home/feed/_base.html" %}
+{% load i18n ifrole %}
+
+{% block item_type %}{{ obj.type }}{% endblock %}
+
+{% block item_media %}
+	<div class="item-media">
+		{% include "assets/audio_player.html" with obj=obj %}
+	</div>
+{% endblock %}
+
+{% block item_description %}
+	<p class="item-description">
+	<span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+	{% if obj.title %}
+	{{ obj.title }}
+		{% if obj.interpret %}
+		- {{ obj.interpret }}
+		{% endif %}
+	{% else %}
+		{% trans "No title" %}
+	</p>
+	{% endif %}
+{% endblock %}
+
+{% block item_info %}
+		<p class="item-info">
+			<span data-livestamp="{{ audio.timestamp|date:"c" }}"></span>
+			{% ifrole "admin" %}
+				<i class="pull-right fa fa-trash delete-button audio-delete-btn" data-group-id="{{ group.id }}" data-audio-id="{{ audio.id }}"></i>
+			{% endifrole %}
+		</p>
+{% endblock %}

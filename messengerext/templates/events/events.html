@@ -1,0 +1,92 @@
+{% extends "_base.html" %}
+{% load i18n staticfiles %}
+
+{% block stylesheets %}
+{{block.super}}
+<link href="{% static "vendor-css/fullcalendar.css" %}" rel="stylesheet">
+<link href="{% static "vendor-css/datepicker.css" %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static "vendor-css/bootstrap-timepicker.min.css" %}">
+{% endblock %}
+
+
+{% block title %} groupsome - {% trans "Events" %} {% endblock %}
+
+
+{% block content %}
+<div class="events container">
+
+    <div class="btn-group cal-select"  data-toggle="buttons"  >
+        <label class="btn btn-default active" id="id_list">
+            <input type="radio" name="op" id="list" checked> <span class="glyphicon glyphicon-list" aria-hidden="true"></span> {% trans "List" %}
+        </label>
+        <label class="btn btn-default" id="id_cal">
+            <input type="radio" name="op" id="cal"> <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> {% trans "Calendar" %}
+        </label>
+    </div>
+
+    <a class="btn btn-default visible-sm visible-md visible-lg newEvent" id="new-Event-lg" data-toggle="modal" href="#CreateEvent">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> {% trans "New Event" %}
+    </a>
+
+    <a class="btn btn-default hidden-sm hidden-md hidden-lg newEvent" href="{% url 'events:create_event' %}">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    </a>
+
+    <div id='calendar' class="hidden" data-events='{{ events|safe }}'>
+    </div>
+
+    <div id='eventlist'>
+        {% if eventlist %}
+
+                {% for event in eventlist %}
+
+                    {% ifchanged %}<span class="event-year"> <h2>{{ event.start|date:"o" }}</h2> </span>{% endifchanged %}
+
+                    <div class="panel panel-default event-list">
+                    {% include "events/eventlist.html" with event=event attending=attending notattending=notattending user=user %}
+                    </div>
+                    {% endfor %}
+                    <br>
+                    <br>
+                    <br>
+            {% else %}
+            <div class="feed-placeholder">
+                <div class="alert alert-info">
+                    <p>{% trans "No upcoming Events! Take your phone and start a /newevent" %}</p>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+
+    <div class="modal fade" id="CreateEvent" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+              {% include "events/assets/create_event_content.html" with user_groups=user_groups %}
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editEvent" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

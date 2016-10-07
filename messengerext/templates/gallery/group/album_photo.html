@@ -1,0 +1,24 @@
+{% extends "gallery/group/album.html" %}
+{% load i18n staticfiles compress %}
+
+{% block body_classes %}{{ block.super }} group-photo-detail-view{% endblock %}
+{% block title %}{{ album.name }} - {% trans "Photos" %} - {{ block.super }}{% endblock %}
+		
+{% block album_content %}
+	<section class="group-photo">
+		<img src="{{ photo.media_url }}" alt="" />
+		<div class="group-photo-background" style="background-image: url({{ photo.media_url }});"></div>
+	</section>
+	
+	<nav class="group-album-pager">
+		<ul class="pager">
+			<li class="previous{% if not prev %} disabled{% endif %}"><a href="{% if prev %}{% url 'groups:photo_album_photo_detail' group_id=photo.group.id album_id=album.id photo_id=prev.id %}{% else %}#{% endif %}">&larr; {% trans "Previous" %}</a></li>
+			<li class="next{% if not next %} disabled{% endif %}"><a href="{% if next %}{% url 'groups:photo_album_photo_detail' group_id=photo.group.id album_id=album.id photo_id=next.id %}{% endif %}">{% trans "Next" %} &rarr;</a></li>
+		</ul>
+	</nav>
+	
+	<div class="page-header">
+		<h2>{% trans "Chatlog" %}</h2>
+	</div>
+	<div class="chatlog chatlog-embed" data-content-type="photo" data-content-id="{{ photo.id }}"></div>
+{% endblock %}

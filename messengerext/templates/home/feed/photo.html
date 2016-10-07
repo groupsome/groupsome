@@ -1,0 +1,14 @@
+{% extends "home/feed/_base.html" %}
+{% load i18n %}
+
+{% block item_type %}photo{% endblock %}
+
+{% block item_action_text %}{% trans "uploaded a picture to" %}{% endblock %}
+{% block item_action_text_without_group %}{% trans "uploaded a picture" %}{% endblock %}
+
+{% block item_media %}
+    <a href="{% url 'groups:photo_detail' group_id=obj.group.id photo_id=obj.id %}" data-toggle="lightbox" data-gallery="multiimages" data-type="image" data-remote="{{ BASE_URL }}{{obj.media_url}}"
+        data-title="<a href='{% url 'groups:photo_detail' group_id=obj.group.id photo_id=obj.id %}' class='btn btn-default' role='button'><i class='fa fa-search-plus' aria-hidden=''true'></i></a>">
+        <img class="img-responsive" src="{{obj.thumbnail_media_url}}" alt="">
+    </a>
+{% endblock %}

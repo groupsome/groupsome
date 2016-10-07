@@ -1,0 +1,42 @@
+{% extends "_base.html" %}
+{% load i18n staticfiles compress %}
+
+{% block content %}
+	<div class="container" data-endless-paginate="true">
+		<div class="btn-group feed-select" data-toggle="buttons">
+			{% for group in user_groups %}
+				<label class="btn btn-default shorten-group-name">
+					<input type="checkbox" value="{{ group.id }}" autocomplete="off" />
+					{{ group.name }}
+				</label>
+			{% endfor %}
+		</div>
+		
+		<div class="feed">
+			{% include feed_template %}
+		</div>
+		<br/>
+		<br/>
+		<br/>
+		
+		<div id="feed-empty" class="hidden">
+			<h2>{% trans "Welcome " %}
+				{% if user.first_name %}
+					{{user.first_name}}
+				{% else %}
+					{{user.username}}
+				{% endif %}
+			</h2>
+			<h3>
+				{% trans "It looks so empty here =(" %}
+			</h3>
+			<h3>
+				{% trans "Join some groups on telegram and upload content there." %}
+			</h3>
+		</div>
+	</div>	
+{% endblock %}
+{% block javascript %}
+	{{ block.super }}
+	<script src="{% static "js/get-tz.js" %}"></script>
+{% endblock %}

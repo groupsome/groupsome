@@ -1,0 +1,171 @@
+﻿{% load i18n staticfiles compress active bootstrap3 %}<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{% block title %}groupsome{% endblock %}</title>
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" href="/static/favicons/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/static/favicons/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/static/favicons/manifest.json">
+		<link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="/static/favicons/favicon.ico">
+		
+		<meta name="msapplication-config" content="/static/favicons/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+		
+		{% block stylesheets %}
+			<link rel="stylesheet" href="{% static "vendor-css/bootstrap.min.css" %}" />
+			<link rel="stylesheet" href="{% static "font-awesome/css/font-awesome.min.css" %}" />
+			<link href="https://fonts.googleapis.com/css?family=Lato|Poiret+One" rel="stylesheet" />
+			<link rel="stylesheet" href="{% static "vendor-css/ekko-lightbox.min.css" %}">
+			<link rel="stylesheet" href="{% static "vendor-css/datepicker.css" %}">
+			<link rel="stylesheet" href="{% static "vendor-css/fullcalendar.css" %}">
+			<link rel="stylesheet" href="{% static "jquery-ui/jquery-ui.min.css" %}">
+			<link rel="stylesheet" href="{% static "vendor-css/checkbox-style.css" %}">
+			<link rel="stylesheet" href="{% static "style/main.css" %}" />
+		{% endblock %}
+	</head>
+
+	<body class="{% block body_classes %}logged-in{% endblock %}">
+		{% block header %}
+		  <header>
+				<nav class="navbar navbar-default navbar-static-top">
+					<div class="container">
+						<div class="navbar-header">
+							<button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						    <a class="navbar-brand" href="{% url 'home:home' %}"><img class="navbar-logo" src="{% static "img/gsLogo.svg" %}"/><img class ="navbar-brand-text"src="{% static "img/gsText.svg" %}"/></a>
+						</div>
+						<div class="collapse navbar-collapse" id="navbar-collapse">
+							<ul class="nav navbar-nav">
+								<li{% ifactive "home:home" %} class="active"{% endifactive %}><a href="{% url 'home:home' %}">{% trans "Feed" %}</a></li>
+								<li{% ifactive "groups:*" %} class="active"{% endifactive %}><a href="{% url 'groups:list' %}">{% trans "Groups" %}</a></li>
+								<li{% ifactive "events:*" %} class="active"{% endifactive %}><a href="{% url 'events:events' %}">{% trans "Events" %}</a></li>
+								<li{% ifactive "surveys:*" %} class="active"{% endifactive %}><a href="{% url 'surveys:surveys' %}">{% trans "Surveys" %}</a></li>
+
+
+								<li class="additional-responsive-menu-item"><a href="{% url 'accounts:settings' %}">{% trans "Settings" %}</a></li>
+								<li class="additional-responsive-menu-item"><a href="{% url 'accounts:legal' %}">{% trans "Legal" %}</a></li>
+								<li class="additional-responsive-menu-item"><a href="{% url 'accounts:logout' %}?next=/landing">{% trans "Logout" %}</a></li>
+							</ul>
+							<div class="navbar-user navbar-right">
+								<div class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<img src="{{ request.user.telegramuser.avatar_url }}" alt="" class="user-avatar img-circle" />
+										<span class="user-name">{% if request.user.first_name %} {{ request.user.first_name }} {% else %} {{ request.user.username }} {% endif %}</span><span class="caret user-settings"></span>
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="{% url 'accounts:settings' %}">{% trans "Settings" %}</a></li>
+										<li><a href="{% url 'accounts:legal' %}">{% trans "Legal" %}</a></li>
+										<li><a href="{% url 'accounts:logout' %}?next=/landing" class="logout-button">{% trans "Logout" %}</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</header>
+		{% endblock header %}
+		
+		{% block messages %}
+			{% if messages %}
+				<div class="container">
+					{% bootstrap_messages %}
+				</div>
+			{% endif %}
+		{% endblock %}
+		
+		{% block content %}
+			
+		{% endblock %}
+		
+		{% block overlays %}
+			<a href="#" class="scroll-to-top"></a>
+		  <div class="toast"></div>
+		  <div id="mobilVideoDiv">
+				<video id="mobilVideo" controls></video>
+			</div>
+			<div class="modal fade" id="modal-prompt">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+							<h4 class="modal-title"></h4>
+						</div>
+						<div class="modal-body modal-form">
+							<div class="form form-horizontal">
+								<div class="form-group">
+									<label for="modal-prompt-input" class="col-sm-2 control-label"></label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" id="modal-prompt-input" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">{% trans "Close" %}</button>
+							<button type="button" class="btn btn-primary">{% trans "Save" %}</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal" id="modal-chatlog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+							<h4 class="modal-title"></h4>
+						</div>
+						<div class="modal-body chatlog">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endblock %}
+	
+		{% block javascript %}
+			{% compress js %}
+				<script src="{% static "vendor-js/jquery.min.js" %}"></script>
+				<script src="{% static "vendor-js/bootstrap.min.js" %}"></script>
+				<script src="{% static "vendor-js/ekko-lightbox.min.js" %}"></script>
+				<script src="{% static "vendor-js/js.cookie.js" %}"></script>
+				<script src="{% static "vendor-js/el-pagination.js" %}"></script>
+				<script src="{% static "jquery-ui/jquery-ui.min.js" %}"></script>
+				<script src="{% static "vendor-js/moment.min.js" %}"></script>
+				<script src="{% static "vendor-js/moment-timezone-with-data.js" %}"></script>
+				<script src="{% static "vendor-js/fullcalendar.min.js" %}"></script>
+				<script src="{% static "vendor-js/bootstrap-datepicker.js" %}"></script>
+				<script src="{% static "vendor-js/bootstrap-timepicker.min.js" %}"></script>
+				<script src="{% static "vendor-js/imagesloaded.pkgd.min.js" %}"></script>
+				<script src="{% static "vendor-js/masonry.pkgd.min.js" %}"></script>
+				<script src="{% static "vendor-js/jquery.mousewheel.min.js" %}"></script>
+				<script src="{% static "vendor-js/datepicker-locale/bootstrap-datepicker.de.min.js" %}"></script>
+				<script src="{% static "vendor-js/jquery.scrollTo.min.js" %}"></script>
+
+
+				<script src="{% static "js/language.js" %}"></script>
+				<script src="{% static "vendor-js/Livestamp.js" %}"></script>
+
+				<script src="{% static "js/lib.js" %}"></script>
+				<script src="{% static "js/audio.js" %}"></script>
+				<script src="{% static "js/events.js" %}"></script>
+				<script src="{% static "js/feed.js" %}"></script>
+				<script src="{% static "js/files.js" %}"></script>
+				<script src="{% static "js/gallery.js" %}"></script>
+				<script src="{% static "js/modals.js" %}"></script>
+				<script src="{% static "js/scroll-to-top.js" %}"></script>
+				<script src="{% static "js/settings.js" %}"></script>
+				<script src="{% static "js/utils.js" %}"></script>
+				<script src="{% static "js/surveys.js" %}"></script>
+				<script src="{% static "js/chatlog.js" %}"></script>
+			{% endcompress %}
+		{% endblock %}
+	</body>
+</html>

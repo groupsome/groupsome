@@ -1,0 +1,23 @@
+{% load i18n %}
+
+<div class="btn-group event-options">
+    <button class="btn btn-link dropdown-toggle dropdown-options" data-toggle="dropdown"><i class="fa fa-caret-down"></i></button>
+    <ul class="options-dropdown dropdown-menu dropdown-menu-right">
+        <li>
+            <!-- display show more only if there are details -->
+            {% for at in attending %}
+            {% if at.status == "no" or at.status == "yes" %}
+            {% ifchanged %}
+            <a class="event-details-btn hidden-lg hidden-md" href="#" data-show="{% trans " Show Details" %}"
+            data-hide="{% trans " Hide Details" %}"> <div style="margin-right:5px;" class="glyphicon glyphicon-info-sign"> </div> {% trans " Show Details" %}</a>
+            {% endifchanged %}
+            {% endif %}
+            {% endfor %}
+        </li>
+        <li><a class="hidden-lg" href="./{{event.id}}/edit_event"> <div style="margin-right:5px;" class="glyphicon glyphicon-edit"> </div> {% trans " Edit" %}</a>
+            <a class="visible-lg edit-modal" data-event-id="{{event.id}}" data-toggle="modal" href="#editEvent"> <div style="margin-right:5px;" class="glyphicon glyphicon-edit"> </div> {% trans " Edit" %}
+            </a>
+        </li>
+        <li><a href="#" class="event-delete-btn" data-event-id="{{ event.id }}"> <div style="margin-right:5px;" class="glyphicon glyphicon-trash"> </div> {% trans " Delete" %}</a></li>
+    </ul>
+</div>

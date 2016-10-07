@@ -1,0 +1,24 @@
+{% extends "home/feed/_base.html" %}
+{% load i18n ifrole %}
+
+{% block item_type %}video{% endblock %}
+
+{% block item_media %}
+	<a href="{{ BASE_URL }}{{obj.media_url}}"
+       data-toggle="loadvideo" data-width="{{obj.width}}" data-height="{{obj.height}}" data-id="{{obj.id}}">
+		<div class="videoRef">
+			<span></span>
+			<img src="{{obj.thumbnail_media_url}}" alt="">
+		</div>
+	</a>
+{% endblock %}
+
+{% block item_info %}
+		<p class="item-info">
+			<span data-livestamp="{{ video.timestamp|date:"c" }}"></span>
+			{% ifrole "admin" %}
+				<i class="pull-right fa fa-trash delete-button video-delete-btn" data-group-id="{{ group.id }}" data-video-id="{{ video.id }}"></i>
+			{% endifrole %}
+		</p>
+{% endblock %}
+

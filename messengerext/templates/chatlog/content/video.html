@@ -1,0 +1,10 @@
+{% extends "chatlog/content/_base.html" %}
+
+{% block item_content %}
+	<a href="{{ BASE_URL }}{{item.media_url}}" class="chatlog-item-video-content" data-toggle="lightbox" data-type="video" data-width="{{item.width}}" data-height="{{item.height}}">
+		<div class="videoRef">
+			<span></span>
+			<img src="{{item.thumbnail_media_url}}" alt="" />
+		</div>
+	</a>
+{% endblock %}

@@ -1,0 +1,2048 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-05 20:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: accounts/commands.py:19
+#, python-brace-format
+msgid ""
+"Username: {0}\n"
+"Password:"
+msgstr ""
+"Benutzername: {0} \n"
+"Passwort:"
+
+#: accounts/commands.py:21
+msgid "Remember to change your password after you login on www.groupso.me"
+msgstr ""
+"Denken Sie daran, das Passwort nach dem Anmelden bei www.groupso.me zu ändern"
+
+#: accounts/commands.py:27
+msgid "Your new password:"
+msgstr "Ihr neues Passwort:"
+
+#: accounts/commands.py:29
+msgid "Remember to change your password after you login"
+msgstr "Denken Sie daran, das Passwort nach dem Anmelden zu ändern"
+
+#: accounts/commands.py:49
+msgid "You're logged in now."
+msgstr "Sie sind jetzt angemeldet."
+
+#: accounts/forms.py:11
+msgid "Current Password"
+msgstr "Aktuelles Passwort"
+
+#: accounts/forms.py:12
+msgid "New Password"
+msgstr "Neues Passwort"
+
+#: accounts/forms.py:13
+msgid "Confirm New Password"
+msgstr "Neues Passwort bestätigen"
+
+#: accounts/forms.py:23
+msgid "This is not your current password. Please try again."
+msgstr "Dies ist nicht das aktuelle Passwort. Bitte erneut versuchen."
+
+#: accounts/forms.py:34
+msgid "Your passwords didn't match. Please try again."
+msgstr "Die Passwörter stimmen nicht überein. Bitte erneut versuchen."
+
+#: accounts/forms.py:37
+msgid "Your new passwords can't be your old password. Please try again."
+msgstr ""
+"Das neue Passwort darf nicht identisch mit dem Alten sein. Bitte erneut "
+"versuchen."
+
+#: accounts/forms.py:41
+msgid "Validation Error."
+msgstr "Validierungsfehler"
+
+#: accounts/forms.py:47 templates/accounts/login.html:15
+#: templates/accounts/login.html:16
+msgid "Username"
+msgstr "Benutzername"
+
+#: accounts/forms.py:48
+msgid "First Name"
+msgstr "Vorname"
+
+#: accounts/forms.py:49
+msgid "Last Name"
+msgstr "Nachname"
+
+#: accounts/forms.py:51
+msgid "Timezone"
+msgstr "Zeitzone"
+
+#: accounts/forms.py:66
+msgid "No whitespaces allowed in username!"
+msgstr "Im Benutzernamen sind keine Leerzeichen erlaubt!"
+
+#: accounts/forms.py:74
+msgid "Username already taken!"
+msgstr "Dieser Benutzername ist bereits vergeben!"
+
+#: accounts/models.py:10
+msgid "Token"
+msgstr ""
+
+#: accounts/models.py:12 surveys/models.py:12
+msgid "Created"
+msgstr "Erstellt"
+
+#: accounts/models.py:13
+msgid "LatestPoll"
+msgstr "Letzte Umfrage"
+
+#: accounts/models.py:14
+msgid "Host"
+msgstr ""
+
+#: accounts/views.py:53
+msgid "Not logged in."
+msgstr "Nicht angemeldet."
+
+#: accounts/views.py:92
+msgid "Wrong username or password"
+msgstr "Falscher Benutzername oder Passwort"
+
+#: accounts/views.py:147
+msgid "No changes detected!"
+msgstr "Es wurden keine Änderungen festgestellt!"
+
+#: accounts/views.py:163
+msgid "Profile successfully updated!"
+msgstr "Profil erfolgreich aktualisiert!"
+
+#: accounts/views.py:184
+msgid "Password successfully changed!"
+msgstr "Passwort erfolgreich geändert!"
+
+#: accounts/views.py:187
+msgid "Password change failed!"
+msgstr "Passwortänderung fehlgeschlagen!"
+
+#: bot/bot.py:315
+msgid "/register"
+msgstr "/registrieren"
+
+#: bot/bot.py:316
+msgid "/newpassword"
+msgstr "/neuespasswort"
+
+#: bot/bot.py:317
+msgid "/help"
+msgstr "/hilfe"
+
+#: bot/bot.py:318
+msgid "/feedback"
+msgstr "/feedback"
+
+#: bot/bot.py:319
+msgid "/start"
+msgstr "/starten"
+
+#: bot/bot.py:320
+msgid "/cancel"
+msgstr "/abbrechen"
+
+#: bot/bot.py:321
+msgid "/newevent"
+msgstr "/neuertermin"
+
+#: bot/bot.py:322
+msgid "/deleteevent"
+msgstr "/terminlöschen"
+
+#: bot/bot.py:323
+msgid "/showevents"
+msgstr "/terminliste"
+
+#: bot/bot.py:324
+msgid "/newsurvey"
+msgstr "/neueumfrage"
+
+#: bot/bot.py:325
+msgid "/showsurvey"
+msgstr "/zeigeumfrage"
+
+#: bot/bot.py:326
+msgid "/results"
+msgstr "/ergebnis"
+
+#: bot/bot.py:327
+msgid "/close"
+msgstr "/schließen"
+
+#: bot/bot.py:328 surveys/commands.py:205 surveys/commands.py:224
+msgid "/done"
+msgstr "/fertig"
+
+#: bot/bot.py:453
+msgid "You don't have permission to do that"
+msgstr "Sie haben dafür keine Berechtigung"
+
+#: bot/bot.py:482
+msgid ""
+"You can only use this command in a group chat! Type /help for more "
+"information"
+msgstr ""
+"Dieser Befehl ist nur in Gruppenchats verfügbar! Sende /hilfe für mehr "
+"Informationen"
+
+#: bot/bot.py:484
+msgid ""
+"Type /help to see all available commands\n"
+" Type /register if you want to register for groupso.me"
+msgstr ""
+
+#: bot/commands.py:85
+msgid "Please give us your feedback!"
+msgstr "Bitte geben sie uns ihr Feedback!"
+
+#: bot/commands.py:90
+msgid ""
+"Your feedback is too long!\n"
+"Please stay within 1000 chars"
+msgstr "Bitte fassen Sie sich kürzer und bleiben Sie unter 1000 Zeichen"
+
+#: bot/commands.py:93
+msgid "Thank you! We always want to improve our service."
+msgstr "Danke! Wir streben immer danach, uns zu verbessern!"
+
+#: bot/commands.py:100
+msgid "This is the groupsome Telegram bot, you can use the following commands."
+msgstr ""
+"Dies ist der groupsome Telegram bot, man kann die folgenden Befehle verwenden"
+
+#: bot/commands.py:103
+msgid ""
+"This is the groupsome Telegram bot, you can use the following commands. More "
+"features are available in a group chat."
+msgstr ""
+"Dies ist der groupsome Telegram bot, man kann die folgenden Befehle "
+"verwenden. Im Gruppenchat sind mehr Features verfügbar."
+
+#: bot/commands.py:118
+msgid "Cancelled"
+msgstr "Abgebrochen"
+
+#: bot/models.py:11
+msgid "JSON"
+msgstr ""
+
+#: bot/models.py:12 home/models.py:72
+msgid "Timestamp"
+msgstr "Zeitstempel"
+
+#: bot/models.py:24 home/models.py:17 home/models.py:73
+msgid "Telegram ID"
+msgstr ""
+
+#: bot/models.py:25
+msgid "Avatar File ID"
+msgstr ""
+
+#: bot/models.py:27
+msgid "Timezone Offset"
+msgstr ""
+
+#: bot/models.py:28
+msgid "TZ Setting"
+msgstr ""
+
+#: bot/models.py:29
+msgid "Language"
+msgstr ""
+
+#: bot/models.py:49
+msgid "Feedback Text"
+msgstr ""
+
+#: events/commands.py:20
+msgid "Event not found."
+msgstr "Termin nicht gefunden."
+
+#: events/commands.py:32
+msgid "Yes"
+msgstr "Ja"
+
+#: events/commands.py:34
+msgid "Maybe"
+msgstr "Vielleicht"
+
+#: events/commands.py:36
+msgid "No"
+msgstr "Nein"
+
+#: events/commands.py:38
+msgid "You selected: "
+msgstr "Sie wählten aus: "
+
+#: events/commands.py:67
+msgid ""
+"At which date and time do you want to plan an event?\n"
+"\n"
+"You can type /cancel to cancel"
+msgstr ""
+"Für welches Datum und Uhrzeit soll ein Termin geplant werden?\n"
+"\n"
+"/abbrechen senden um abzubrechen"
+
+#: events/commands.py:77 events/commands.py:81
+msgid ""
+"Could not understand the date and time\n"
+"\n"
+"You can type /cancel to cancel"
+msgstr ""
+"Ich konnte Datum/Uhrzeit nicht verstehen\n"
+"\n"
+"/abbrechen senden um abzubrechen"
+
+#: events/commands.py:85
+msgid ""
+"Ok I will plan an event on {0:%A}, {0:%x} at {0:%H}:{0:%M}\n"
+"What's the occasion?\n"
+"\n"
+"You can type /cancel to cancel"
+msgstr ""
+"Ok ich werde einen Termin am {0:%A}, {0:%x} um {0:%H}:{0:%M} eintragen. \n"
+"Was ist der Anlass?\n"
+"\n"
+"/abbrechen senden um abzubrechen"
+
+#: events/commands.py:91
+msgid ""
+"The event name is too long!\n"
+"\n"
+"You can type /cancel to cancel"
+msgstr ""
+"Der Terminname ist zu lang!\n"
+"\n"
+"/abbrechen senden um abzubrechen"
+
+#: events/commands.py:95
+msgid ""
+"Ok I will plan event for {0} on {1:%A}, {1:%x} at {1:%H}:{1:%M}\n"
+"Where will it be?\n"
+"\n"
+"You can type /cancel to cancel"
+msgstr ""
+"Ok ich werde einen Termin für {0} am {1:%A}, {1:%x} um {1:%H}:{1:%M} eintragen. \n"
+"An welchem Ort?\n"
+"\n"
+"/abbrechen senden um abzubrechen"
+
+#: events/commands.py:101
+msgid ""
+"The event location is too long!\n"
+"\n"
+"You can type /cancel to cancel"
+msgstr ""
+"Der Ort ist zu lang!\n"
+"\n"
+"/abbrechen senden um abzubrechen"
+
+#: events/commands.py:111
+#, python-brace-format
+msgid "{0} is in 1 hour at {1}"
+msgstr "{0} ist in einer Stunde in {1}"
+
+#: events/commands.py:116
+msgid "Ok I created an event for {0} at {1} on {2:%A}, {2:%x} at {2:%H}:{2:%M}"
+msgstr ""
+"Ok ich habe einen Termin für {0} in {1} am {2:%A}, {2:%x} um {2:%H}:{2:%M} erstellt."
+
+#: events/commands.py:119 events/views.py:208
+msgid "yes"
+msgstr "Ja"
+
+#: events/commands.py:121 events/views.py:209
+msgid "maybe"
+msgstr "Vielleicht"
+
+#: events/commands.py:123 events/views.py:210
+msgid "no"
+msgstr "Nein"
+
+#: events/commands.py:126 events/views.py:219
+msgid ""
+"{0} created an event for {1} at {2} on {3:%A}, {3:%x} at {3:%H}:{3:%M}\n"
+"Will you attend?"
+msgstr ""
+"{0} hat einen Termin für {1} in {2} am {3:%A}, {3:%x} um {3:%H}:{3:%M} erstellt. \n"
+"Teilnehmen?"
+
+#: events/commands.py:147
+msgid "{0}: {1} at {2} on {3:%A} {3:%x} at {3:%H}:{3:%M}\n"
+msgstr "{0}: {1} in {2} am {3:%A} {3:%x} um {3:%H}:{3:%M}\n"
+
+#: events/commands.py:152
+msgid "No events in this group. Write /newevent to start an event."
+msgstr ""
+"Keine Termine in dieser Gruppe. Sende /neuertermin um einen zu erstellen."
+
+#: events/commands.py:154
+msgid "Write /deleteevent <number> to delete an event."
+msgstr "Sende /terminlöschen <Nummer>, um einen Termin zu löschen."
+
+#: events/commands.py:171
+msgid "Event not found, write /deleteevent <number> to delete an event."
+msgstr ""
+"Termin nicht gefunden, sende /terminlöschen <Nummer>, um einen Termin zu "
+"löschen."
+
+#: events/commands.py:173
+msgid "Event {} has been deleted."
+msgstr "Termin {} wurde gelöscht."
+
+#: events/models.py:10 gallery/models.py:10 home/models.py:11
+#: home/models.py:219 templates/files/group/directory.html:25
+msgid "Name"
+msgstr ""
+
+#: events/models.py:11
+msgid "Start"
+msgstr "Beginn"
+
+#: events/models.py:12 templates/events/assets/create_event_content.html:44
+#: templates/events/assets/edit_event_content.html:26
+msgid "Location"
+msgstr "Ort"
+
+#: events/models.py:14 templates/events/assets/create_event_content.html:53
+#: templates/events/assets/edit_event_content.html:35
+msgid "Allday"
+msgstr "Ganztägig"
+
+#: events/models.py:29
+msgid "Event"
+msgstr "Termin"
+
+#: events/models.py:30 templates/_base.html:48 templates/events/events.html:12
+msgid "Events"
+msgstr "Termine"
+
+#: events/models.py:35 surveys/models.py:10
+msgid "Status"
+msgstr ""
+
+#: events/models.py:45 events/models.py:46
+msgid "Attending"
+msgstr "Teilnahme"
+
+#: events/views.py:113
+msgid "Successfully deleted Event"
+msgstr "Termin erfolgreich gelöscht"
+
+#: events/views.py:115 events/views.py:145 events/views.py:147
+#: files/views.py:48 files/views.py:54 gallery/views.py:40 gallery/views.py:60
+#: gallery/views.py:70 gallery/views.py:136
+msgid "Something went wrong"
+msgstr "Etwas ist schief gelaufen"
+
+#: events/views.py:181 events/views.py:271
+msgid "Error while parsing the date/time!"
+msgstr "Fehler beim Verarbeiten des Datums/der Zeit"
+
+#: events/views.py:189 surveys/views.py:90
+msgid "No group found!"
+msgstr "Keine Gruppe gefunden!"
+
+#: events/views.py:193 events/views.py:275
+msgid "Event Name can`t be empty!"
+msgstr "Termin Name darf nicht leer sein!"
+
+#: events/views.py:204
+msgid "{} is in 1 hour at {}"
+msgstr "{} ist in einer Stunde in {}"
+
+#: events/views.py:214
+msgid ""
+"{0} created an all-day event for {1} at {2} on {3:%A}, {3:%x}\n"
+"Will you attend?"
+msgstr ""
+"{0} hat einen ganztägigen Termin für {1} in {2} am {3:%A}, {3:%x} erstellt. \n"
+"Teilnehmen?"
+
+#: events/views.py:236 events/views.py:251 surveys/views.py:61
+#: surveys/views.py:145 surveys/views.py:164 surveys/views.py:238
+#: surveys/views.py:248 surveys/views.py:258 surveys/views.py:316
+#: surveys/views.py:350 surveys/views.py:373
+msgid "Something went wrong!"
+msgstr "Etwas ist schief gelaufen!"
+
+#: events/views.py:302
+msgid ""
+"{0} changed event {1} at {2} on {3:%A}, {3:%x} at {3:%H}:{3:%M} to an all-day event "
+"{4} at {5} on {6:%A}, {6:%x} \n"
+msgstr ""
+"{0} hat den Termin {1} in {2} am {3:%A}, {3:%x} um {3:%H}:{3:%M} zu einem "
+"ganztägigen Termin {4} in {5} am {6:%A}, {6:%x} geändert \n"
+
+#: events/views.py:309
+msgid ""
+"{0} changed all-day event {1} at {2} on {3:%A}, {3:%x} to {4} at {5} on {6:"
+"%A}, {6:%x} at {6:%H}:{6:%M} \n"
+msgstr ""
+"{0} hat einen ganztägigen Termin für {1} in {2} am {3:%A}, {3:%x} zu einem "
+"Termin {4} in {5} am {6:%A}, {6:%x} um {6:%H}:{6:%M} geändert\n"
+
+#: events/views.py:316
+msgid ""
+"{0} changed all-day event {1} at {2} on {3:%A}, {3:%x} to an all-day event "
+"{4} at {5} on {6:%A}, {6:%x} \n"
+msgstr ""
+"{0} hat einen ganztägigen Termin für {1} in {2} am {3:%A}, {3:%x} zu einem "
+"ganztägigen Termin {4} in {5} am {6:%A}, {6:%x} geändert\n"
+
+#: events/views.py:322
+msgid ""
+"{0} changed event {1} at {2} on {3:%A}, {3:%x} at {3:%H}:{3:%M} to {4} at {5} on {6:"
+"%A}, {6:%x} at {6:%H}:{6:%M} \n"
+msgstr ""
+"{0} hat einen Termin für {1} in {2} am {3:%A}, {3:%x} um {3:%H}:{3:%M} zu einem "
+"Termin {4} in {5} am {6:%A}, {6:%x} um {6:%H}:{6:%M} geändert\n"
+
+#: files/views.py:72
+msgid "Directory deleted"
+msgstr "Ordner gelöscht"
+
+#: files/views.py:85
+msgid "File deleted"
+msgstr "Datei gelöscht"
+
+#: files/views.py:108
+msgid "File moved"
+msgstr "Datei verschoben"
+
+#: files/views.py:131
+msgid "Directory moved"
+msgstr "Ordner verschoben"
+
+#: gallery/models.py:11 groups/forms.py:13 home/models.py:15 home/models.py:194
+msgid "Description"
+msgstr "Beschreibung"
+
+#: gallery/models.py:29
+msgid "Album"
+msgstr ""
+
+#: gallery/models.py:30 templates/gallery/group/overview.html:9
+msgid "Albums"
+msgstr "Alben"
+
+#: gallery/views.py:28
+msgid "Already in album"
+msgstr "Bereits im Album"
+
+#: gallery/views.py:68
+msgid "Successfully removed from album"
+msgstr "Erfolgreich aus Album entfernt"
+
+#: gallery/views.py:104
+msgid "Album deleted successfully!"
+msgstr "Album erfolgreich gelöscht!"
+
+#: gallery/views.py:155
+msgid "Photo deleted"
+msgstr "Foto gelöscht"
+
+#: gallery/views.py:187 gallery/views.py:196
+msgid "Photo rotated"
+msgstr "Foto gedreht"
+
+#: groups/forms.py:14 home/models.py:13
+msgid "Header Image"
+msgstr "Titelbild"
+
+#: groups/forms.py:15
+msgid "Administrators"
+msgstr "Administratoren"
+
+#: groups/forms.py:16
+msgid "Make everyone an administrator"
+msgstr "Mache jeden zum Administrator"
+
+#: groups/views.py:142
+msgid "Settings saved!"
+msgstr "Einstellungen gespeichert!"
+
+#: groups/views.py:161
+msgid "Admins synced!"
+msgstr "Admins synchronisiert!"
+
+#: groups/views.py:188
+msgid "Link deleted"
+msgstr "Link gelöscht"
+
+#: groups/views.py:214
+msgid "Audio deleted"
+msgstr "Audio gelöscht"
+
+#: groups/views.py:240
+msgid "Video deleted"
+msgstr "Video gelöscht"
+
+#: home/models.py:12
+msgid "Chat Photo File ID"
+msgstr ""
+
+#: home/models.py:14
+msgid "Header Image Version"
+msgstr ""
+
+#: home/models.py:35 templates/events/assets/create_event_content.html:17
+#: templates/surveys/assets/create_survey_content.html:16
+msgid "Group"
+msgstr "Gruppe"
+
+#: home/models.py:36 templates/_base.html:47
+msgid "Groups"
+msgstr "Gruppen"
+
+#: home/models.py:80 home/models.py:134 home/models.py:163 home/models.py:195
+#: home/models.py:230 home/models.py:247 home/models.py:292
+msgid "File"
+msgstr ""
+
+#: home/models.py:81 home/models.py:167
+msgid "Thumbnail"
+msgstr ""
+
+#: home/models.py:82 home/models.py:116 home/models.py:138 home/models.py:168
+#: home/models.py:192 home/models.py:231 home/models.py:293
+msgid "Type"
+msgstr ""
+
+#: home/models.py:83
+msgid "Photo Version"
+msgstr "Foto Version"
+
+#: home/models.py:93
+msgid "Photo"
+msgstr ""
+
+#: home/models.py:94 templates/gallery/group/album.html:4
+#: templates/gallery/group/album_photo.html:5
+#: templates/gallery/group/overview.html:4
+#: templates/gallery/group/overview.html:36
+#: templates/gallery/group/photo.html:5 templates/groups/_base.html:27
+msgid "Photos"
+msgstr "Fotos"
+
+#: home/models.py:115
+msgid "Content"
+msgstr ""
+
+#: home/models.py:129
+msgid "Text"
+msgstr ""
+
+#: home/models.py:130
+msgid "Texts"
+msgstr ""
+
+#: home/models.py:135 home/models.py:164
+msgid "DurationSeconds"
+msgstr ""
+
+#: home/models.py:136 home/models.py:193 templates/groups/links.html:17
+msgid "Title"
+msgstr "Titel"
+
+#: home/models.py:137
+msgid "Interpret"
+msgstr ""
+
+#: home/models.py:148
+msgid "Audio"
+msgstr ""
+
+#: home/models.py:149 templates/groups/_base.html:30
+msgid "Audios"
+msgstr "Audios"
+
+#: home/models.py:165
+msgid "Width"
+msgstr ""
+
+#: home/models.py:166
+msgid "Height"
+msgstr ""
+
+#: home/models.py:178
+msgid "Video"
+msgstr ""
+
+#: home/models.py:179 templates/groups/_base.html:28
+msgid "Videos"
+msgstr "Videos"
+
+#: home/models.py:209
+msgid "Link"
+msgstr ""
+
+#: home/models.py:210 templates/groups/_base.html:31
+#: templates/groups/links.html:5 templates/groups/links.html:10
+msgid "Links"
+msgstr "Links"
+
+#: home/models.py:232
+msgid "Filename"
+msgstr ""
+
+#: home/models.py:248 templates/files/group/directory.html:5
+#: templates/files/group/directory.html:18 templates/groups/_base.html:29
+msgid "Files"
+msgstr "Dateien"
+
+#: home/models.py:302
+msgid "Sticker"
+msgstr ""
+
+#: home/models.py:303
+msgid "Stickers"
+msgstr ""
+
+#: surveys/commands.py:20 surveys/commands.py:257 surveys/views.py:122
+#: surveys/views.py:212
+msgid "(multiselect)"
+msgstr "(Mehrfachauswahl)"
+
+#: surveys/commands.py:30
+msgid "Survey posted below."
+msgstr "Umfrage unterhalb gesendet."
+
+#: surveys/commands.py:33
+#, python-brace-format
+msgid ""
+"Survey{2} from {0}:\n"
+"\n"
+" {1}"
+msgstr ""
+"Umfrage{2} von {0}:\n"
+"\n"
+" {1}"
+
+#: surveys/commands.py:86
+msgid "Survey not found."
+msgstr "Umfrage nicht gefunden."
+
+#: surveys/commands.py:90
+msgid "The survey is already closed."
+msgstr "Die Umfrage ist bereits geschlossen."
+
+#: surveys/commands.py:94
+msgid "Option not found."
+msgstr "Option nicht gefunden."
+
+#: surveys/commands.py:99
+msgid "Vote removed for: "
+msgstr "Auswahl entfernt für: "
+
+#: surveys/commands.py:102 surveys/views.py:267
+msgid "You voted for: "
+msgstr "Sie stimmten für: "
+
+#: surveys/commands.py:121 surveys/commands.py:149
+msgid ""
+"No Survey found in this group.\n"
+"You can create a new survey with /newsurvey."
+msgstr ""
+"Keine Umfrage in dieser Gruppe.\n"
+"Sende /neueumfrage um eine zu erstellen."
+
+#: surveys/commands.py:135 surveys/commands.py:161 surveys/views.py:297
+#: surveys/views.py:338 templates/surveys/surveylist.html:34
+#: templates/surveys/surveylist.html:101
+msgid "vote"
+msgstr "Stimme"
+
+#: surveys/commands.py:137 surveys/commands.py:163 surveys/views.py:299
+#: surveys/views.py:340 templates/surveys/surveylist.html:34
+#: templates/surveys/surveylist.html:101
+msgid "votes"
+msgstr "Stimmen"
+
+#: surveys/commands.py:139
+msgid ""
+"The standings of your latest survey are:\n"
+"\n"
+msgstr ""
+"Das Ergebnis der letzten Umfrage ist:\n"
+"\n"
+
+#: surveys/commands.py:146 surveys/views.py:314
+msgid "Only the creator or group admin can close a survey."
+msgstr "Nur der Ersteller oder Gruppen-Admin kann eine Umfrage schließen."
+
+#: surveys/commands.py:166 surveys/views.py:306
+msgid "The Survey was closed."
+msgstr "Die Umfrage wurde geschlossen."
+
+#: surveys/commands.py:168
+msgid ""
+"The survey was closed.\n"
+"The final standings of your survey are:\n"
+"\n"
+msgstr ""
+"Die Umfrage wurde geschlossen.\n"
+"Das finale Ergebnis der Umfrage ist:\n"
+"\n"
+
+#: surveys/commands.py:178
+msgid ""
+"Ok, let's create a survey.\n"
+"What question do you want to ask?\n"
+"\n"
+"You can type /cancel to cancel"
+msgstr ""
+"Ok, lass uns die Umfrage erstellen.\n"
+"Welche Frage soll gestellt werden?\n"
+"\n"
+"/abbrechen senden um abzubrechen"
+
+#: surveys/commands.py:196
+msgid ""
+"The question is too long, please keep it short. (100 letters max)\n"
+"Please send the question again."
+msgstr ""
+"Die Frage ist zu lang, bitte kurz halten. (100 Zeichen maximal)\n"
+"Bitte erneut die Frage senden."
+
+#: surveys/commands.py:201
+msgid ""
+"Ok good, now send me the first option please. \n"
+"\n"
+"You can type /cancel to cancel"
+msgstr ""
+"Ok gut, sende jetzt die erste Option bitte.\n"
+"\n"
+"/abbrechen senden um abzubrechen"
+
+#: surveys/commands.py:207
+msgid ""
+"The option is too long, please keep it short. (30 letters max)\n"
+"Please send the option again."
+msgstr ""
+"Die Option ist zu lang, bitte kurz halten. (30 Zeichen maximal)\n"
+"Bitte erneut die Option senden."
+
+#: surveys/commands.py:215
+msgid ""
+"Ok good, now send me the second option please. \n"
+"\n"
+"You can type /cancel to cancel"
+msgstr ""
+"Ok gut, sende jetzt die zweite Option bitte.\n"
+"\n"
+"/abbrechen senden um abzubrechen"
+
+#: surveys/commands.py:219
+msgid ""
+"Ok good, if you want to add another option, send it to me.\n"
+"\n"
+"If you have enough options send /done to finish the survey"
+msgstr ""
+"Ok gut, um weitere Option hinzuzufügen, sende diese an mich.\n"
+"\n"
+"Wenn das genug Optionen sind, sende /fertig um die Umfrage abzuschließen"
+
+#: surveys/commands.py:226
+msgid ""
+"You need at least two options. \n"
+"Please send another option."
+msgstr "Mindestens zwei Optionen benötigt.Bitte eine weitere Option senden."
+
+#: surveys/commands.py:230
+msgid ""
+"Alright. Do you want to be able to select multiple options (multiselect)?\n"
+"\n"
+"Please send /yes or /no."
+msgstr ""
+"Ok. Möchten Sie die Auswahl mehrerer Optionen (Mehrfachauswahl) aktivieren?\n"
+"Bitte sende /ja oder /nein."
+
+#: surveys/commands.py:237
+msgid "/yes"
+msgstr "/ja"
+
+#: surveys/commands.py:239
+msgid "/no"
+msgstr "/nein"
+
+#: surveys/commands.py:242
+msgid "Please send /yes or /no."
+msgstr "Bitte sende /ja oder /nein."
+
+#: surveys/commands.py:261 surveys/views.py:127
+#, python-brace-format
+msgid ""
+"{0} created a survey{2}:\n"
+"\n"
+" {1}"
+msgstr ""
+"{0} erstellte eine Umfrage{2}:\n"
+"\n"
+" {1}"
+
+#: surveys/commands.py:265
+msgid "Alright, I created a new survey at your group."
+msgstr "So, ich erstelle die Umfrage in der Gruppe."
+
+#: surveys/models.py:9 templates/surveys/assets/create_survey_content.html:33
+#: templates/surveys/assets/edit_survey_content.html:16
+msgid "Question"
+msgstr "Frage"
+
+#: surveys/models.py:14 templates/surveys/assets/create_survey_content.html:69
+msgid "Multiselect"
+msgstr "Mehrfachauswahl"
+
+#: surveys/models.py:15
+msgid "Message_ID"
+msgstr ""
+
+#: surveys/models.py:16
+msgid "Chat_ID"
+msgstr ""
+
+#: surveys/models.py:30
+msgid "Survey"
+msgstr ""
+
+#: surveys/models.py:31 templates/_base.html:49
+#: templates/surveys/surveys.html:4
+msgid "Surveys"
+msgstr "Umfragen"
+
+#: surveys/models.py:35 templates/surveys/assets/edit_survey_content.html:27
+msgid "Option"
+msgstr "Option"
+
+#: surveys/models.py:49
+msgid "Choice"
+msgstr ""
+
+#: surveys/models.py:50
+msgid "Choices"
+msgstr ""
+
+#: surveys/models.py:64 templates/surveys/surveylist.html:69
+#: templates/surveys/surveylist.html:92
+msgid "Vote"
+msgstr "Abstimmen"
+
+#: surveys/models.py:65
+msgid "Votes"
+msgstr ""
+
+#: surveys/views.py:52
+msgid "Survey was deleted."
+msgstr "Umfrage wurde gelöscht."
+
+#: surveys/views.py:58
+msgid "Survey deleted"
+msgstr "Umfrage gelöscht"
+
+#: surveys/views.py:59
+msgid "Only the creator or group admin can delete a survey."
+msgstr "Nur der Ersteller oder Gruppen-Admin kann eine Umfrage löschen."
+
+#: surveys/views.py:94 surveys/views.py:173
+msgid "Survey question can`t be empty!"
+msgstr "Frage darf nicht leer sein!"
+
+#: surveys/views.py:158 surveys/views.py:227
+msgid "Only the creator or group admin can edit a survey."
+msgstr "Nur der Ersteller oder Gruppen-Admin kann eine Umfrage editieren."
+
+#: surveys/views.py:216
+#, python-brace-format
+msgid ""
+"{0}\n"
+"\n"
+"to:\n"
+msgstr ""
+"{0}\n"
+"\n"
+"zu:\n"
+
+#: surveys/views.py:218
+#, python-brace-format
+msgid ""
+"{0} changed survey{1}:\n"
+"\n"
+"{2}{3}"
+msgstr ""
+"{0} änderte die Umfrage{1}:\n"
+"\n"
+"{2}{3}"
+
+#: surveys/views.py:265
+msgid "Votes removed."
+msgstr "Auswahl entfernt."
+
+#: surveys/views.py:301
+#, python-brace-format
+msgid ""
+"{0} closed a survey.\n"
+"The final standings of your survey are:\n"
+"\n"
+"{1}"
+msgstr ""
+"{0} hat eine Umfrage geschlossen.\n"
+"Das finale Ergebnis der Umfrage ist:\n"
+"\n"
+"{1}"
+
+#: surveys/views.py:312
+msgid "Survey closed"
+msgstr "Umfrage geschlossen"
+
+#: surveys/views.py:342
+#, python-brace-format
+msgid ""
+"The final standings of your survey are:\n"
+"\n"
+"{0}"
+msgstr ""
+"Das finale Ergebnis der Umfrage ist:\n"
+"\n"
+"{0}"
+
+#: surveys/views.py:346
+msgid "Survey result posted"
+msgstr "Umfrageergebnis gesendet"
+
+#: surveys/views.py:348
+msgid "Only the creator or group admin can send results."
+msgstr "Nur der Ersteller oder Gruppen-Admin kann das Ergebnis senden."
+
+#: surveys/views.py:369
+msgid "Survey resent"
+msgstr "Umfrage erneut gesendet"
+
+#: surveys/views.py:371
+msgid "Only the creator or group admin can resend a survey."
+msgstr "Nur der Ersteller oder Gruppen-Admin kann eine Umfrage erneut senden."
+
+#: templates/_base.html:46 templates/groups/_base.html:26
+msgid "Feed"
+msgstr "Feed"
+
+#: templates/_base.html:52 templates/_base.html:63
+#: templates/groups/settings.html:4
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: templates/_base.html:53 templates/_base.html:64
+msgid "Legal"
+msgstr "Rechtliches"
+
+#: templates/_base.html:54 templates/_base.html:65
+msgid "Logout"
+msgstr "Abmelden"
+
+#: templates/_base.html:111
+msgid "Close"
+msgstr "Schließen"
+
+#: templates/_base.html:112 templates/events/assets/edit_event_content.html:72
+#: templates/groups/settings.html:14
+#: templates/surveys/assets/edit_survey_content.html:57
+msgid "Save"
+msgstr "Speichern"
+
+#: templates/_landingpage.html:43 templates/_landingpage.html:61
+#: templates/pages/landing.html:62
+msgid "About"
+msgstr "Über uns"
+
+#: templates/_landingpage.html:58 templates/pages/landing.html:44
+#: templates/pages/landing.html:59
+msgid "Login"
+msgstr ""
+
+#: templates/_landingpage.html:64 templates/pages/landing.html:65
+#: templates/pages/landing.html:155
+msgid "Register"
+msgstr "Registrieren"
+
+#: templates/_landingpage.html:67 templates/pages/landing.html:68
+#: templates/pages/landing.html:180
+msgid "Contact"
+msgstr "Kontakt"
+
+#: templates/accounts/login.html:14
+msgid "Please sign in"
+msgstr "Bitte anmelden"
+
+#: templates/accounts/login.html:17 templates/accounts/login.html:18
+msgid "Password"
+msgstr "Passwort"
+
+#: templates/accounts/login.html:32
+msgid "Submit"
+msgstr "Anmelden"
+
+#: templates/accounts/login.html:33
+msgid "Forgot password?"
+msgstr "Passwort vergessen?"
+
+#: templates/accounts/login.html:38
+msgid "... or scan with your phone"
+msgstr "... oder mit dem Handy scannen"
+
+#: templates/accounts/login.html:47
+msgid "... or authenticate directly using Telegram"
+msgstr "... oder direkt mit der Telegram App anmelden"
+
+#: templates/accounts/login.html:48
+msgid "Open Telegram App &amp; Login"
+msgstr "Telegram öffnen &amp; anmelden"
+
+#: templates/accounts/login.html:53 templates/accounts/login.html:76
+msgid "No Groupsome user?"
+msgstr "Noch kein Nutzer?"
+
+#: templates/accounts/login.html:56 templates/accounts/login.html:79
+msgid ""
+"If you want to learn how to register or learn more about Groupsome, click "
+"the Button below... "
+msgstr ""
+"Klicke unten, wenn sie wissen wollen, wie sie sich registrieren können oder "
+"mehr über groupsome erfahren möchten..."
+
+#: templates/accounts/login.html:59 templates/accounts/login.html:82
+msgid "Learn more"
+msgstr "Mehr erfahren"
+
+#: templates/accounts/login.html:63
+msgid "Get to know us!"
+msgstr "Lernen sie uns kennen!"
+
+#: templates/accounts/login.html:66
+msgid "You can contact our bot directly on telegram. "
+msgstr "Sie können unseren Bot direkt in Telegram kontaktieren."
+
+#: templates/accounts/login.html:69 templates/pages/landing.html:162
+msgid "Contact our bot"
+msgstr "Kontaktiere unseren Bot"
+
+#: templates/accounts/login.html:93
+msgid "How to reset your password"
+msgstr "Wie das Passwort zurücksetzen"
+
+#: templates/accounts/login.html:96
+msgid ""
+"To reset your password contact our groupsome Bot on Telegram. Tell him that "
+"you forgot your password or type <b>/newpassword</b> and he will send you a "
+"new one."
+msgstr ""
+"Um das Passwort zurückzusetzen, kontaktiere unseren groupsome Bot in "
+"Telegram. Sag ihm, dass das Passwort vergessen wurde oder sende <b>/"
+"newpassword</b> und er wird ein neues zusenden."
+
+#: templates/accounts/login.html:99
+msgid "Ok, I got it"
+msgstr "Ok, verstanden"
+
+#: templates/accounts/settings.html:6
+msgid "Edit Profile"
+msgstr "Profil bearbeiten"
+
+#: templates/accounts/settings.html:16
+msgid "Get Telegram Picture"
+msgstr "Telegram Profilbild aktualisieren"
+
+#: templates/accounts/settings.html:38
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+#: templates/accounts/settings.html:40 templates/assets/delete_modal.html:13
+#: templates/events/assets/create_event_content.html:92
+#: templates/events/assets/create_event_content.html:93
+#: templates/events/assets/edit_event_content.html:74
+#: templates/events/assets/edit_event_content.html:75
+#: templates/groups/settings.html:15
+#: templates/surveys/assets/create_survey_content.html:86
+#: templates/surveys/assets/create_survey_content.html:87
+#: templates/surveys/assets/edit_survey_content.html:59
+#: templates/surveys/assets/edit_survey_content.html:60
+#: templates/surveys/surveylist.html:70
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: templates/accounts/settings.html:51 templates/accounts/settings.html:75
+msgid "Change Password"
+msgstr "Passwort ändern"
+
+#: templates/assets/add_to_album_btn.html:5
+msgid "add image to another album"
+msgstr "Bild zu einem anderen Album hinzufügen"
+
+#: templates/assets/add_to_album_btn.html:14
+msgid "Add image to album:"
+msgstr "Bild zu Album hinzufügen:"
+
+#: templates/assets/audio_player.html:3
+msgid "Your browser does not support audio"
+msgstr "Der Browser unterstützt kein Audio"
+
+#: templates/assets/delete_modal.html:8
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "                    Are you sure you want to delete this %(object)s?\n"
+#| "                "
+msgid ""
+"\n"
+"                    Are you sure you want to delete this %(object)s?\n"
+"                "
+msgstr ""
+"\n"
+"                    %(object) wirklich löschen?\n"
+"                "
+
+#: templates/assets/delete_modal.html:14
+msgid "Delete"
+msgstr "Löschen"
+
+#: templates/assets/event_options.html:11
+#: templates/assets/event_options.html:12
+msgid " Show Details"
+msgstr " Details anzeigen"
+
+#: templates/assets/event_options.html:12
+msgid " Hide Details"
+msgstr " Details ausblenden"
+
+#: templates/assets/event_options.html:17
+#: templates/assets/event_options.html:18
+#: templates/assets/survey_options.html:8
+#: templates/assets/survey_options.html:9
+msgid " Edit"
+msgstr " Editieren"
+
+#: templates/assets/event_options.html:21
+#: templates/assets/photo_options.html:10
+#: templates/assets/survey_options.html:16
+msgid " Delete"
+msgstr " Löschen"
+
+#: templates/assets/legal_notice_text.html:4
+msgid "Impressum"
+msgstr "Impressum"
+
+#: templates/assets/legal_notice_text.html:4
+msgid "Angaben gemäß § 5 TMG"
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:9
+msgid "Vertreten durch:"
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:12
+msgid "Telefon:"
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:13
+msgid "Fax:"
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:14
+msgid "E-Mail:"
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:20
+msgid "Terms of Use"
+msgstr "Nutzungsbedingungen"
+
+#: templates/assets/legal_notice_text.html:24
+msgid "0 Allgemeines"
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:26
+msgid ""
+" Diese Nutzungsbedingungen und Datenschutzbestimmungen regeln das Verhältnis "
+"zwischen dem im Impressum\n"
+"    eingetragenen Seitenbetreiber\n"
+"    (\"Wir\") und dem Nutzer (\"Sie\"). Diese Bedingungen sind für alle "
+"Nutzer verbindlich. "
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:31
+msgid "1 Geltungsbereich"
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:33
+msgid ""
+" Wir  sind ausschließlich für Inhalte verantwortlich, die selbst erstellt "
+"oder veröffentlicht werden.\n"
+"        Diese\n"
+"    Nutzungsbedingungen gelten für alle Inhalte der Domain www.groupso.me "
+"sowie aller zugehörigen Subdomains."
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:39
+msgid "2 Haftung"
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:41
+msgid ""
+" Haftung für Inhalte: Die Inhalte unserer Seiten wurden mit größter Sorgfalt "
+"erstellt. Für die Richtigkeit,\n"
+"    Vollständigkeit und Aktualität der Inhalte können wir jedoch keine "
+"Gewähr übernehmen. Als Diensteanbieter sind wir\n"
+"    gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den "
+"allgemeinen Gesetzen verantwortlich.\n"
+"    Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht "
+"verpflichtet, übermittelte oder gespeicherte fremde\n"
+"    Informationen zu überwachen oder nach Umständen zu forschen, die auf "
+"eine rechtswidrige Tätigkeit hinweisen.\n"
+"    Verpflichtungen zur Entfernung oder Sperrung der Nutzung von "
+"Informationen nach den allgemeinen Gesetzen bleiben\n"
+"    hiervon unberührt. Eine\n"
+"    diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis "
+"einer konkreten Rechtsverletzung möglich.\n"
+"    Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese "
+"Inhalte umgehend entfernen."
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:54
+msgid ""
+"Haftung für Links:\n"
+"        Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren "
+"Inhalte wir keinen Einfluss haben.\n"
+"        Deshalb können wir für diese fremden Inhalte auch keine Gewähr "
+"übernehmen. Für die Inhalte der verlinkten Seiten\n"
+"        ist stets der jeweilige Anbieter oder Betreiber der Seiten "
+"verantwortlich. Die verlinkten Seiten wurden zum\n"
+"        Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. "
+"Rechtswidrige Inhalte waren\n"
+"        zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente "
+"inhaltliche Kontrolle der verlinkten Seiten\n"
+"        ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht "
+"zumutbar.\n"
+"        Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links "
+"umgehend entfernen."
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:65
+msgid ""
+"Wir kontrollieren den Austausch von Inhalten innerhalb der unterstützen "
+"Messenger nicht.\n"
+"        Wir übernehmen keinerlei Haftung für die bereitgestellten Inhalte."
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:69
+msgid "3 Urheberrecht"
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:71
+msgid ""
+"Die durch uns erstellten Inhalte und Werke auf diesen Seiten unterliegen\n"
+"    dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, "
+"Verbreitung und jede Art der\n"
+"    Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der "
+"schriftlichen Zustimmung\n"
+"    des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite "
+"sind nur für den\n"
+"    privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf "
+"dieser Seite nicht\n"
+"    vom Betreiber erstellt wurden, werden die Urheberrechte Dritter "
+"beachtet. Insbesondere werden Inhalte\n"
+"    Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine "
+"Urheberrechtsverletzung aufmerksam werden,\n"
+"    bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von "
+"Rechtsverletzungen werden wir derartige\n"
+"    Inhalte umgehend entfernen."
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:81
+msgid "4 Datenschutz"
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:83
+msgid ""
+"(1) Personenbezogene Daten: Die Nutzung unserer Webseite ist in der Regel "
+"ohne Angabe personenbezogener Daten\n"
+"        möglich. Soweit auf\n"
+"    unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift "
+"oder eMail-Adressen) erhoben werden,\n"
+"    erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten "
+"werden ohne Ihre ausdrückliche\n"
+"    Zustimmung nicht an Dritte weitergegeben. <br>\n"
+"    Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei "
+"der Kommunikation per E-Mail)\n"
+"    Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor "
+"dem Zugriff durch Dritte ist\n"
+"    nicht möglich. <br>\n"
+"    Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten "
+"Kontaktdaten durch Dritte zur\n"
+"    Übersendung von nicht ausdrücklich angeforderter Werbung und "
+"Informationsmaterialien wird hiermit\n"
+"    ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich "
+"ausdrücklich rechtliche Schritte\n"
+"    im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch "
+"Spam-Mails, vor."
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:97
+msgid ""
+"Nutzungsdaten:  Das teilen von Inhalten oder durchführen von Handlungen, die "
+"die Rechte anderer Personen\n"
+"        verletzen oder gegen das Gesetz verstoßen, sind verboten.\n"
+"        Wir können sämtliche Ihrer Inhalte und Informationen die auf unserer "
+"Seite dargestellt werden entfernen, wenn\n"
+"        sie gegen die Nutzungsbedingungen verstoßen."
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:102
+msgid "5 Cookies"
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:104
+msgid ""
+"Durch die Verwendung der oder den Zugang zur Website stimmen Sie der "
+"Verwendung von Cookies zu.\n"
+"        Wir verwenden Cookies zum einen für analytische Zwecke, also um "
+"durch die Analyse von Benutzeraktivitäten\n"
+"        unser Angebot zu verbessen. Weiterhin verwenden wir Cookies um "
+"bestimmte Benutzereinstellungen zu speichern.\n"
+"        "
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:109
+msgid "6 Sonstiges"
+msgstr ""
+
+#: templates/assets/legal_notice_text.html:111
+msgid ""
+"Wir behalten uns vor diese Nutzungsbedingungen jederzeit zu ändern. Es "
+"erfolgt kein\n"
+"        Hinweis auf eine solche Änderung, die Nutzungsbedingungen sind "
+"selbstständig auf Veränderungen zu prüfen.\n"
+"        "
+msgstr ""
+
+#: templates/assets/photo_options.html:6
+msgid "Set as cover"
+msgstr "Als Titelbild verwenden"
+
+#: templates/assets/photo_options.html:7
+msgid "Remove from album "
+msgstr "Bild aus diesem Album entfernen"
+
+#: templates/assets/photo_options.html:14
+msgid "Add to or remove from album"
+msgstr "Füge Album hinzu oder entferne daraus"
+
+#: templates/assets/photo_options.html:17
+#: templates/assets/photo_options.html:19
+msgid " "
+msgstr ""
+
+#: templates/assets/remove_from_album_btn.html:5
+msgid "remove image from this album"
+msgstr "Bild aus diesem Album entfernen"
+
+#: templates/assets/remove_from_album_btn.html:10
+msgid "remove image"
+msgstr "Bild entfernen"
+
+#: templates/assets/survey_icon.html:7 templates/assets/survey_icon.html:9
+#: templates/assets/survey_icon.html:15 templates/assets/survey_icon.html:17
+#: templates/surveys/surveylist.html:12 templates/surveys/surveylist.html:13
+msgid "You can chose one or more options."
+msgstr "Sie können eine oder mehrere Optionen wählen."
+
+#: templates/assets/survey_icon.html:26
+msgid "You voted already"
+msgstr "Bereits abgestimmt"
+
+#: templates/assets/survey_icon.html:28
+msgid "Not voted yet"
+msgstr "Noch nicht abgestimmt"
+
+#: templates/assets/survey_options.html:7
+msgid " Resend"
+msgstr " Erneut senden"
+
+#: templates/assets/survey_options.html:11
+msgid " Close"
+msgstr " Schließen"
+
+#: templates/assets/survey_options.html:14
+msgid " Send"
+msgstr " Senden"
+
+#: templates/chatlog/chatlog.html:4
+msgid "Older"
+msgstr "Älter"
+
+#: templates/chatlog/chatlog.html:12
+msgid "Newer"
+msgstr "Neuer"
+
+#: templates/chatlog/content/file.html:10
+msgid "Download"
+msgstr ""
+
+#: templates/error_pages/400.html:9
+msgid "We are sorry, your request is invalid!"
+msgstr "Sorry, Ihre Anfrage ist ungültig!"
+
+#: templates/error_pages/403.html:9
+msgid "We are sorry, you are not authorized to view this page!"
+msgstr "Sorry, aber Sie sind nicht berechtigt diese Seite zu sehen!"
+
+#: templates/error_pages/404.html:9
+msgid "We are sorry, but this page does not exist!"
+msgstr "Sorry, aber diese Seite existiert nicht!"
+
+#: templates/error_pages/500.html:9
+msgid "We are sorry, but an server error occurred!"
+msgstr "Sorry, aber ein Server Fehler ist aufgetreten!"
+
+#: templates/error_pages/_errorpage.html:43
+msgid "Ooops, an error occurred:"
+msgstr "Ooops, ein Fehler ist aufgetreten:"
+
+#: templates/events/assets/create_event_content.html:5
+#: templates/events/create_event.html:11
+msgid "Create Event"
+msgstr "Termin erstellen"
+
+#: templates/events/assets/create_event_content.html:34
+#: templates/events/assets/edit_event_content.html:16
+msgid "Event Name"
+msgstr "Termin Name"
+
+#: templates/events/assets/create_event_content.html:61
+#: templates/events/assets/edit_event_content.html:43
+msgid "Date"
+msgstr "Datum"
+
+#: templates/events/assets/create_event_content.html:76
+#: templates/events/assets/edit_event_content.html:58
+msgid "Time"
+msgstr "Uhrzeit"
+
+#: templates/events/assets/create_event_content.html:90
+#: templates/surveys/assets/create_survey_content.html:84
+msgid "Create"
+msgstr "Erstellen"
+
+#: templates/events/assets/edit_event_content.html:5
+#: templates/events/edit_event.html:11
+msgid "Edit Event"
+msgstr "Termin editieren"
+
+#: templates/events/eventlist.html:21 templates/events/eventlist.html:29
+msgid "maybe attend"
+msgstr "vielleicht"
+
+#: templates/events/eventlist.html:22 templates/events/eventlist.html:35
+msgid "don't attend"
+msgstr "absagen"
+
+#: templates/events/eventlist.html:28 templates/events/eventlist.html:34
+msgid "attend"
+msgstr "zusagen"
+
+#: templates/events/eventlist.html:57
+msgid "attending"
+msgstr "Teilnehmer"
+
+#: templates/events/eventlist.html:68
+msgid "not attending"
+msgstr "nicht teilnehmend"
+
+#: templates/events/events.html:20
+msgid "List"
+msgstr "Liste"
+
+#: templates/events/events.html:23
+msgid "Calendar"
+msgstr "Kalender"
+
+#: templates/events/events.html:28
+msgid "New Event"
+msgstr "Neuer Termin"
+
+#: templates/events/events.html:55
+msgid "No upcoming Events! Take your phone and start a /newevent"
+msgstr "Keine Termine! Sende /neuertermin um einen zu erstellen."
+
+#: templates/files/group/directory.html:13
+msgid "Create folder"
+msgstr "Ordner erstellen"
+
+#: templates/files/group/directory.html:26 templates/groups/links.html:18
+msgid "Posted"
+msgstr "Gesendet"
+
+#: templates/files/group/directory.html:58 templates/groups/links.html:38
+msgid "by"
+msgstr "von"
+
+#: templates/files/group/directory.html:73
+#: templates/gallery/group/overview.html:48 templates/groups/audios.html:22
+#: templates/groups/feed.html:16 templates/groups/links.html:58
+#: templates/groups/videos.html:23 templates/home/home.html:31
+msgid "It looks so empty here =("
+msgstr "Es schaut so leer aus hier =("
+
+#: templates/files/group/directory.html:76
+#: templates/gallery/group/overview.html:51 templates/groups/audios.html:25
+#: templates/groups/feed.html:19 templates/groups/links.html:61
+#: templates/groups/videos.html:26
+msgid "Post something in this group"
+msgstr "Sende etwas an diese Gruppe"
+
+#: templates/gallery/album_content/photo.html:8
+#, python-format
+msgid " uploaded by %(user)s"
+msgstr " gesendet von %(user)s"
+
+#: templates/gallery/album_content/photo_small.html:12
+#, python-format
+msgid "by %(user)s"
+msgstr "von %(user)s"
+
+#: templates/gallery/assets/create_album.html:4
+msgid "Create album"
+msgstr "Album erstellen"
+
+#: templates/gallery/assets/create_album.html:8
+msgid "New Album"
+msgstr "Neues Album"
+
+#: templates/gallery/assets/create_album.html:10
+msgid "description"
+msgstr "Beschreibung"
+
+#: templates/gallery/group/album.html:16
+#: templates/gallery/group/overview.html:24
+#, python-format
+msgid "%(count)s picture(s)"
+msgstr "%(count)s Bild(er)"
+
+#: templates/gallery/group/album_photo.html:15
+msgid "Previous"
+msgstr "Vorheriges"
+
+#: templates/gallery/group/album_photo.html:16
+msgid "Next"
+msgstr "Nächstes"
+
+#: templates/gallery/group/album_photo.html:21
+#: templates/gallery/group/photo.html:24
+msgid "Chatlog"
+msgstr ""
+
+#: templates/gallery/group/overview.html:21
+msgid "Do you really want to delete this album?"
+msgstr "Wollen Sie dieses Album wirklich löschen?"
+
+#: templates/groups/_base.html:55
+msgid "Members"
+msgstr "Mitglieder"
+
+#: templates/groups/_base.html:71
+msgid "Upcoming Events"
+msgstr "Nächste Termine"
+
+#: templates/groups/_base.html:83 templates/groups/_base.html:114
+#: templates/userprofile/userprofile.html:84
+msgid "Show more"
+msgstr "Mehr anzeigen"
+
+#: templates/groups/_base.html:85
+msgid "Take your phone and start a /newevent"
+msgstr "Sende /neuertermin um einen zu erstellen."
+
+#: templates/groups/_base.html:100
+msgid "Open Survey"
+msgstr "Offene Umfrage"
+
+#: templates/groups/_base.html:102
+msgid "Open Surveys"
+msgstr "Offene Umfragen"
+
+#: templates/groups/_base.html:116
+msgid "Take your phone and start a /newsurvey"
+msgstr "Sende /neueumfrage um eine zu erstellen."
+
+#: templates/groups/audio_small.html:21
+msgid "No title"
+msgstr "Kein Titel"
+
+#: templates/home/feed/_base.html:20
+msgid "posted"
+msgstr "gesendet"
+
+#: templates/home/feed/audio.html:6
+msgid "posted an audio file to"
+msgstr "hat eine Audio Datei gesendet. Gruppe:"
+
+#: templates/home/feed/audio.html:7
+msgid "posted an audio file"
+msgstr "hat eine Audio Datei gesendet"
+
+#: templates/home/feed/link.html:6
+msgid "posted a link to"
+msgstr "hat einen Link gesendet. Gruppe:"
+
+#: templates/home/feed/link.html:7
+msgid "posted a link"
+msgstr "hat einen Link gesendet"
+
+#: templates/home/feed/photo.html:6
+msgid "uploaded a picture to"
+msgstr "hat ein Bild gesendet. Gruppe:"
+
+#: templates/home/feed/photo.html:7
+msgid "uploaded a picture"
+msgstr "hat ein Bild gesendet"
+
+#: templates/home/feed/video.html:6
+msgid "uploaded a video to"
+msgstr "hat ein Video gesendet. Gruppe:"
+
+#: templates/home/feed/video.html:7
+msgid "uploaded a video"
+msgstr "hat ein Video gesendet"
+
+#: templates/home/home.html:23
+msgid "Welcome "
+msgstr "Willkommen "
+
+#: templates/home/home.html:34
+msgid "Join some groups on telegram and upload content there."
+msgstr "Trete Gruppen auf Telegram bei und sende dort Inhalte."
+
+#: templates/pages/landing.html:84
+msgid "Manage and view your Telegram groups contents!"
+msgstr "Verwalten Sie Ihre Telegram Gruppen und deren Inhalte!"
+
+#: templates/pages/landing.html:98
+msgid "About groupsome"
+msgstr "Über groupsome"
+
+#: templates/pages/landing.html:99
+msgid ""
+"Groupsome offers the brilliant opportunity to manage and view content from "
+"your Telegram groups in a web application:"
+msgstr ""
+"Groupsome bietet die geniale Möglichkeit Ihre Inhalte von Telegram Gruppen "
+"in einer Web Applikation einzusehen und zu managen:"
+
+#: templates/pages/landing.html:105
+msgid "view recently posted content in a feed"
+msgstr "Verfolge zuletzt veröffentlichte Inhalte in einem Feed"
+
+#: templates/pages/landing.html:106
+msgid "view photos and corresponding comments or create albums"
+msgstr "Betrachte Bilder und erstelle Alben"
+
+#: templates/pages/landing.html:107
+msgid "collect your videos, files, audios and links"
+msgstr "Sammle Videos, Links, Audio- oder sonstige Dateien"
+
+#: templates/pages/landing.html:108
+msgid "start events, share whether or not you attend and be reminded"
+msgstr "Erstelle Termine, werde an diese erinnert und nimm an ihnen teil"
+
+#: templates/pages/landing.html:109
+msgid "view all personal events in a calendar"
+msgstr "Betrachte alle persönlichen Termine in einem Kalender"
+
+#: templates/pages/landing.html:110
+msgid "initiate group surveys, vote and view the results"
+msgstr "Starte Gruppenumfragen und betrachte die Ergebnisse"
+
+#: templates/pages/landing.html:118
+msgid "FAQ"
+msgstr "Fragen und Antworten"
+
+#: templates/pages/landing.html:123
+msgid "Q: Who is it for?"
+msgstr "Für wen ist groupsome?"
+
+#: templates/pages/landing.html:124
+msgid ""
+"Groupsome is for everyone who wants to manage his chat groups more "
+"efficiently."
+msgstr "Für jeden der seine Chatgruppen effizienter verwalten möchte."
+
+#: templates/pages/landing.html:125
+msgid ""
+"It delivers the features you know from your preferred social network to your "
+"private chat groups."
+msgstr ""
+"Es macht die Vorteile, die Sie aus Ihrem präferierten sozialen Netzwerk "
+"kennen, in ihren Chatgruppen verfügbar"
+
+#: templates/pages/landing.html:126
+msgid ""
+"You have one group for your football team, one for your fellow students and "
+"one for your family? We help you aggregate and manage them all properly."
+msgstr ""
+"Eine Gruppe für das Fußballteam, eine für die Kommilitonen und eine für die "
+"Familie? Wir sammeln und organisieren die Beiträge für Sie und bieten "
+"weitere Zusatzfunktionen."
+
+#: templates/pages/landing.html:130
+msgid "Q: How to get started?"
+msgstr "Wie lege ich los?"
+
+#: templates/pages/landing.html:131
+msgid "Just invite @groupsomebot to your groups in telegram."
+msgstr ""
+"Laden Sie einfach @groupsomebot in Ihre Gruppenkonversationen auf Telegram "
+"ein."
+
+#: templates/pages/landing.html:132
+msgid ""
+"Every participant in the group who wants to use our great service just needs "
+"to send a private message to @groupsomebot. It's  that simple."
+msgstr ""
+"Jeder Teilnehmer der unseren großartigen Service nutzen möchte, muss "
+"@groupsomebot lediglich eine private Nachricht schreiben. Ja, es ist "
+"wirklich so einfach."
+
+#: templates/pages/landing.html:135
+msgid "Q: Is my content safe?"
+msgstr "Sind meine Inhalte sicher?"
+
+#: templates/pages/landing.html:136
+msgid "We do everything we can to assure your content is safe."
+msgstr ""
+"Wir tun alles technisch mögliche, um sicherzugehen, dass alle Inhalte auf "
+"unserer Seite sicher sind."
+
+#: templates/pages/landing.html:137
+msgid ""
+"So we double check if you are allowed to access content, even if you know "
+"the direct link for it."
+msgstr ""
+"Daher sind Zugriffe auf Serverinhalte wirklich nur für Mitglieder der "
+"jeweiligen Gruppen möglich.Auch wenn ein Dritter einen direkten Link zu "
+"einem der Inhalte hätte, könnte er diese nicht anzeigen."
+
+#: templates/pages/landing.html:140
+msgid "Q: Why should I trust you?"
+msgstr "Wieso sollte ich euch trauen?"
+
+#: templates/pages/landing.html:141
+msgid ""
+"We do not earn money with this project. We just have fun in web development."
+msgstr ""
+"Wir verdienen mit unserem Projekt und Ihren Daten kein Geld. Wir haben "
+"einfach Spaß an der Webentwicklung"
+
+#: templates/pages/landing.html:142
+msgid ""
+"If you want to check security yourself: We're open source, you can check our "
+"code on github, see below "
+msgstr ""
+"Wenn Sie die Sicherheit der Seite selbst überprüfen wollen: Unser Projekt "
+"ist Open Source, für den Code auf github siehe unten"
+
+#: templates/pages/landing.html:156
+msgid ""
+"To register for our service, contact our groupsome bot on Telegram in a "
+"private chat."
+msgstr ""
+"Um sich für unseren Dienst zu registrieren, kontaktieren sie einfach unseren "
+"Bot auf Telegram per privater Nachricht."
+
+#: templates/pages/landing.html:157
+msgid ""
+"He will add you as a user and will grant further information about the login."
+msgstr ""
+"Er wird das Konto anlegen und weitere Informationen über den Login "
+"bereitstellen."
+
+#: templates/pages/landing.html:158
+msgid ""
+"To use our service for a group just invite our groupsome bot in your group "
+"or click the button below on your smartphone."
+msgstr ""
+"Um unseren Dienst zu verwenden, laden Sie unseren groupsome bot in Ihre "
+"Gruppe ein oder klicken Sie auf den untenstehenden Button auf Ihrem "
+"Smartphone."
+
+#: templates/pages/landing.html:159
+msgid ""
+"The bot automatically provides the content for you at the web application."
+msgstr ""
+"Der Bot stellt dann die Inhalte automatisch für die Web Applikation bereit."
+
+#: templates/pages/landing.html:166
+msgid "invite our bot"
+msgstr "Lade unseren Bot ein"
+
+#: templates/pages/landing.html:181
+msgid ""
+"Groupsome is an open source project developed by students of the Friedrich-"
+"Alexander-University Erlangen-Nürnberg."
+msgstr ""
+"Groupsome wird von Studenten der Friedrich-Alexander-Universität Erlangen-"
+"Nürnberg entwickelt."
+
+#: templates/pages/landing.html:182
+msgid ""
+"The project is in progress and some features will be added in the future."
+msgstr ""
+"Es wird kontinuierlich an diesem Projekt gearbeitet. Einige Funktionen "
+"werden erst in Zukunft verfügbar sein."
+
+#: templates/pages/landing.html:186
+msgid "Contact us"
+msgstr "Kontaktiere uns"
+
+#: templates/pages/landing.html:195
+msgid "Legal Information"
+msgstr "Rechtliche Informationen"
+
+#: templates/pages/landing.html:224
+msgid ""
+"This website uses cookies to ensure you get the best experience on our "
+"website"
+msgstr ""
+"Diese Website verwendet Cookies, um ein optimales Erlebnis zu garantieren"
+
+#: templates/pages/landing.html:224
+msgid "Got it!"
+msgstr "Verstanden!"
+
+#: templates/pages/landing.html:224
+msgid "More info"
+msgstr "Weitere Informationen"
+
+#: templates/surveys/assets/create_survey_content.html:5
+#: templates/surveys/create_survey.html:4
+msgid "Create Survey"
+msgstr "Umfrage erstellen"
+
+#: templates/surveys/assets/create_survey_content.html:42
+msgid "Option 1"
+msgstr "Option 1"
+
+#: templates/surveys/assets/create_survey_content.html:50
+msgid "Option 2"
+msgstr "Option 2"
+
+#: templates/surveys/assets/edit_survey_content.html:5
+#: templates/surveys/edit_survey.html:4
+msgid "Edit Survey"
+msgstr "Umfrage editieren"
+
+#: templates/surveys/surveylist.html:15
+msgid "You can chose one option."
+msgstr "Eine Option wählbar."
+
+#: templates/surveys/surveylist.html:24
+msgid "of"
+msgstr "von"
+
+#: templates/surveys/surveylist.html:24
+msgid " voted"
+msgstr "stimmten ab"
+
+#: templates/surveys/surveylist.html:24
+msgid " so far"
+msgstr " bis jetzt"
+
+#: templates/surveys/surveylist.html:49
+msgid "Change vote"
+msgstr "Auswahl ändern"
+
+#: templates/surveys/surveys.html:11
+msgid "Show open surveys"
+msgstr "Offene Umfragen anzeigen"
+
+#: templates/surveys/surveys.html:12
+msgid "Open"
+msgstr "Offen"
+
+#: templates/surveys/surveys.html:14
+msgid "Show closed surveys"
+msgstr "Geschlossene Umfragen anzeigen"
+
+#: templates/surveys/surveys.html:15
+msgid "Closed"
+msgstr "Geschlossen"
+
+#: templates/surveys/surveys.html:20
+msgid "New Survey"
+msgstr "Neue Umfrage"
+
+#: templates/surveys/surveys.html:45
+msgid "No surveys in your groups! Take your phone and create a /newsurvey"
+msgstr ""
+"Keine Umfragen in dieser Gruppe! Sende /neueumfrage um eine zu erstellen."
+
+#: templates/userprofile/userprofile.html:8
+#, python-format
+msgid " %(name)s's activities "
+msgstr " %(name)s's Aktivitäten "
+
+#: templates/userprofile/userprofile.html:10
+#, python-format
+msgid "  %(name)s's activities "
+msgstr " %(name)s's Aktivitäten "
+
+#: templates/userprofile/userprofile.html:25
+#, python-format
+msgid " %(name)s has no activities"
+msgstr " %(name)s war bisher nicht aktiv "
+
+#: templates/userprofile/userprofile.html:27
+#, python-format
+msgid "  %(name)s has no activities"
+msgstr " %(name)s war bisher nicht aktiv "
+
+#: templates/userprofile/userprofile.html:40
+msgid "Info"
+msgstr "Info"
+
+#: templates/userprofile/userprofile.html:58
+msgid "Common Groups"
+msgstr "Gemeinsame Gruppen"
+
+#: templates/userprofile/userprofile.html:73
+msgid "Events you might meet"
+msgstr "Termine, bei denen ihr euch treffen könntet"
+
+#: templates/userprofile/userprofile.html:87
+#, python-format
+msgid " What about inviting %(name)s to a party? "
+msgstr " Wie wäre es %(name)s auf eine Party einzuladen? "
+
+#: templates/userprofile/userprofile.html:89
+#, python-format
+msgid "  What about inviting %(name)s to a party? "
+msgstr " Wie wäre es %(name)s auf eine Party einzuladen? "

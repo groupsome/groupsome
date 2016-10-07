@@ -1,0 +1,31 @@
+{% load i18n app_filters %}
+<a class="survey-link" href="{% url "surveys:surveys" %}{{survey.id}}" title="{{survey.question}}">
+    <span class="survey icon shorten-text-sidebar">
+        {% if survey.multiselect %}
+
+            {% if survey|user_voted:request %}
+                <i class="fa fa-check-square-o" aria-hidden="true" title="{% trans "You can chose one or more options." %}"></i>
+            {% else %}
+                <i class="fa fa-square-o" aria-hidden="true" title="{% trans "You can chose one or more options." %}"></i>
+            {% endif %}
+
+        {% else %}
+
+            {% if survey|user_voted:request %}
+                <i class="fa fa-check-circle-o" aria-hidden="true" title="{% trans "You can chose one or more options." %}"></i>
+            {% else %}
+                <i class="fa fa-circle-o" aria-hidden="true" title="{% trans "You can chose one or more options." %}"></i>
+            {% endif %}
+
+        {% endif %}
+    </span>
+
+    <span class="survey-question shorten-text-sidebar" >{{survey.question}}</span> <br/>
+    <span class="survey-details shorten-text-sidebar">
+        {% if survey|user_voted:request %}
+            {% trans "You voted already" %}
+        {% else %}
+            {% trans "Not voted yet" %}
+        {% endif %}
+    </span>
+</a>

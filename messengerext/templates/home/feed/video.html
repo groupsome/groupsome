@@ -1,0 +1,17 @@
+{% extends "home/feed/_base.html" %}
+{% load i18n %}
+
+{% block item_type %}video{% endblock %}
+
+{% block item_action_text %}{% trans "uploaded a video to" %}{% endblock %}
+{% block item_action_text_without_group %}{% trans "uploaded a video" %}{% endblock %}
+
+{% block item_media %}
+	<a href="{{ BASE_URL }}{{obj.media_url}}"
+       data-toggle="lightbox" data-type="video" data-width="{{obj.width}}" data-height="{{obj.height}}" >
+		<div class="videoRef">
+			<span></span>
+			<img src="{{obj.thumbnail_media_url}}" alt="">
+		</div>
+	</a>
+{% endblock %}

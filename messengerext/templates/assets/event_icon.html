@@ -1,0 +1,14 @@
+<span class="event icon shorten-text-sidebar">
+    <strong>{{ event.start|date:"M" }}</strong>
+    <span>{{ event.start|date:"d" }}</span>
+</span>
+
+<span class="event-name shorten-text-sidebar">{{event.name}}</span> <br/>
+<span class="event-details shorten-text-sidebar">
+    {% if event.allday %}
+        allday
+    {% else %}
+        {{ event.start|time:"H:i" }}
+    {% endif %}
+    {% if event.location %}- {{event.location}} {% endif %}
+</span>

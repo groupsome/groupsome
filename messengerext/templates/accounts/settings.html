@@ -1,0 +1,82 @@
+{% extends "_base.html" %}
+{% load i18n staticfiles compress bootstrap3 %}
+
+{% block content %}
+    <div class="container user-settings">
+        <h1 id="user">{% trans "Edit Profile" %}</h1>
+        <hr>
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-3">
+                <div class="text-center">
+                    <img src="{{ user.telegramuser.avatar_url }}" height="70%" width="70%" class="avatar img-circle"
+                         alt="avatar">
+                    <br/>
+                    <br/>
+                    <input class="btn btn-primary" name="profile_pic" value="{% trans 'Get Telegram Picture' %}"
+                           type="button" data-post="{% url 'accounts:settings_update_avatar' %}">
+                </div>
+            </div>
+
+            <!-- edit form column -->
+            <div class="col-md-9 personal-info">
+
+
+                <h3></h3>
+
+
+                <form class="form-horizontal" method="post">
+                    {% csrf_token %}
+
+                    {% bootstrap_form user_form layout="horizontal" %}                    
+
+                    <div class="form-group">
+
+                        <label class="col-md-3 control-label"></label>
+                        <div class="col-md-8">
+                            <input class="btn btn-primary" name="edit_profile"
+                                   value="{% trans 'Save Changes' %}" type="submit">
+                            <span></span>
+                            <input class="btn btn-default" value="{% trans 'Cancel' %}" type="reset">
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container user-settings">
+    <h1 id="pw">{% trans "Change Password" %}</h1>
+        <hr>
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-3">
+
+                <input class="form-control"  style="display:none;" type="file">
+            </div>
+
+            <!-- edit form column -->
+            <div class="col-md-9 personal-info">
+
+                <h3></h3>
+
+
+                <form class="form-horizontal" method="post">
+                    {% csrf_token %}
+
+                    {% bootstrap_form pw_form layout="horizontal" %}  
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"></label>
+                        <div class="col-md-8">
+                            <input class="btn btn-primary" name="change_password"
+                                   value="{% trans 'Change Password' %}" type="submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

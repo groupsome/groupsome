@@ -1,0 +1,87 @@
+{% load i18n staticfiles compress %}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/static/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/static/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/static/favicons/manifest.json">
+    <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/static/favicons/favicon.ico">
+    <meta name="msapplication-config" content="/static/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    {% block style %}
+    {% compress css %}
+        <link rel="stylesheet" href="{% static "vendor-css/bootstrap.min.css" %}">
+        <link rel="stylesheet" href="{% static "style/main.css" %}" />
+        <link rel="stylesheet" href="{% static "vendor-css/grayscale.css" %}">
+
+    {% endcompress %}
+    <link href="{% static "font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+          type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    {% endblock %}
+
+    <title> {% block title %} groupsome {% endblock %} </title>
+
+</head>
+
+<body class="{% block body_classes %}landingpage{% endblock %}">
+
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <div class="navbar-header">
+
+            <a class="navbar-toggle" href="{% url 'pages:landing' %}#about">{% trans "About" %}</a>
+
+            <a class="navbar-brand page-scroll" href="{% url 'pages:landing' %}#page-top">
+                <img class="navbar-logo" src="{% static "img/gsLogoWhite.svg" %}"/><img class ="navbar-brand-text"src="{% static "img/gsTextWhite.svg" %}"/>
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden">
+                    <a href="#top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="{% url 'accounts:login' %}">{% trans "Login" %}</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="{% url 'pages:landing' %}#about">{% trans "About" %}</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="{% url 'pages:landing' %}#register">{% trans "Register" %}</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="{% url 'pages:landing' %}#contact">{% trans "Contact" %}</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</nav>
+<!-- /.container in subclass -->
+{% block content %}
+
+{% endblock %}
+
+{% block javascript %}
+{% compress js %}
+    <script src="{% static "vendor-js/jquery.min.js" %}"></script>
+    <script src="{% static "vendor-js/bootstrap.min.js" %}"></script>
+{% endcompress %}
+{% endblock %}
+
+</body>
+</html>

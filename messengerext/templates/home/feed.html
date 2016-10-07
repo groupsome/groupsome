@@ -1,0 +1,16 @@
+{% load el_pagination_tags i18n %}
+{% lazy_paginate 12 feed_list as feed %}
+
+{% for obj in feed %}
+	{% if obj.type == "photo" %}
+		{% include "home/feed/photo.html" with obj=obj albums=albums inside_group=inside_group %}
+	{% elif obj.type == "link" %}
+		{% include "home/feed/link.html" with obj=obj inside_group=inside_group %}
+	{% elif obj.type == "audio" or obj.type == "voice" %}
+		{% include "home/feed/audio.html" with obj=obj inside_group=inside_group %}
+	{% elif obj.type == "video" %}
+		{% include "home/feed/video.html" with obj=obj inside_group=inside_group %}
+	{% endif %}
+{% endfor %}
+
+{% show_more %}

@@ -1,0 +1,13 @@
+{% load i18n %}
+
+<!--<div class="chatlog-pager chatlog-pager-older">
+	<button class="btn btn-default btn-sm chatlog-pager-button" data-direction="older"><i class="fa fa-arrow-up"></i> {% trans "Older" %}</button>
+</div>-->
+
+<div class="chatlog-items" data-group-title="{{ content.group.name }}">
+	{% include "chatlog/chatlog_items.html" %}
+</div>
+
+<!--<div class="chatlog-pager chatlog-pager-newer">
+	<button class="btn btn-default btn-sm chatlog-pager-button" data-direction="newer"><i class="fa fa-arrow-down"></i> {% trans "Newer" %}</button>
+</div>-->

@@ -1,0 +1,29 @@
+{% extends "groups/_base.html" %}
+{% load i18n staticfiles compress %}
+
+{% block title %}{{ album.name }} - {% trans "Photos" %} - {{ block.super }}{% endblock %}
+
+{% block group_content %}
+	<section class="group-photo-list">
+		<div class="panel panel-default album-header">
+			<div class="panel-body clearfix">
+				<div class="album-cover-wrapper pull-left">
+					<div class="album-cover" style="background-image: url({{ cover }});"></div>
+				</div>
+				
+				<div class="album-header-info">
+					<h2>{{ album.name }}</h2>
+					<p>{% if album.description != "" %}{{ album.description }} - {% endif %}{% blocktrans with count=photos|length %}{{ count }} picture(s){% endblocktrans %}</p>
+				</div>
+			</div>
+		</div>
+		
+		{% block album_content %}
+			<div class="photo-list photo-list-small">
+				{% for photo in photos %}
+					{% include "gallery/album_content/photo_small.html" with photo=photo albums=False album=album group=group%}
+				{% endfor %}
+			</div>
+		{% endblock %}
+	</section>
+{% endblock %}

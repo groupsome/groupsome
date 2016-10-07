@@ -1,0 +1,24 @@
+{% load i18n %}
+<div class="btn-group pull-right photo-options">
+	<button class="btn btn-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-down"></i></button>
+	<ul class="options-dropdown dropdown-menu">
+		{% if album %}
+			<li><a href="#" data-post="{% url 'gallery:album_set_cover' album_id=album.id photo_id=photo.id %}"> <div style="margin-right:5px;" class="glyphicon glyphicon-blackboard"> </div> {% trans "Set as cover" %}</a></li>
+			<li><a href="#" class="remove-from-album-btn" data-album-id="{{ album.id }}" data-photo-id="{{ photo.id }}" data-group-id="{{group.id}}"> <div style="margin-right:5px;" class="glyphicon glyphicon-minus"> </div> {% trans "Remove from album " %} </a></li>
+		{% endif %}
+		
+		<li><a href="#" class="photo-delete-btn" data-photo-id="{{ photo.id }}"> <div style="margin-right:5px;" class="glyphicon glyphicon-trash"> </div> {% trans " Delete" %}</a></li>
+		
+		{% if albums %}
+			<li class="divider"></li>
+			<li class="dropdown-header">{% trans "Add to or remove from album" %}</li>
+			{% for a in albums %}
+				{% if a.id in photo.get_albums %}
+					<li><a href="#" class="remove-from-album-overview-btn" data-album-id="{{ a.id }}" data-photo-id="{{ photo.id }}" data-group-id="{{group.id}}"> <div style="margin-right:5px;" class="glyphicon glyphicon-minus"> </div> {% trans " " %} {{ a.name }} </a></li>
+				{% else %}
+					<li><a href="#" class="add-photo-to-album-btn" data-album-id="{{ a.id }}" data-photo-id="{{ photo.id }}" data-group-id="{{group.id}}"> <div style="margin-right:5px;" class="glyphicon glyphicon-plus"> </div> {% trans " " %} {{ a.name }}</a></li>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	</ul>
+</div>

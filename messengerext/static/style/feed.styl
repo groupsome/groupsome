@@ -1,0 +1,181 @@
+
+.feed
+	.item
+		float: left
+		width: 300px
+
+@media screen and (min-width: 600px) and (max-width: 1180px)
+	section.group
+		.item
+			width: 250px
+
+@media screen and (max-width: 600px)
+	section.group
+		.item
+			width: 90%
+
+
+.item
+	background: #ffffff
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3)
+	margin: 10px
+	padding: 10px
+	border-top: 1px solid rgba(0, 0, 0, 0.1)
+	display: inline-block
+
+	img
+		max-width: 100%
+		height: auto
+		margin: auto
+		display: block
+	
+	> a:active, > a:focus
+		outline: none
+	
+	a
+		font-weight: bold
+	
+	.item-info
+		margin-bottom: 0
+	
+	.item-media
+		display: block
+		margin-bottom: 5px
+
+.item a, .image-modal-title
+	color: #1a1a1a
+
+// TODO aktuell probleme in chrome
+/*.item:hover {
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}*/
+
+.feed a
+	text-decoration: none
+
+#feed-empty
+	text-align: center
+
+.pop-image:hover
+	cursor: pointer
+
+// add to album button in photo tiles
+.manage-album-btn
+	float: right
+	margin-right: 5px
+
+.manage-album-btn:hover
+	cursor: pointer
+
+.add-to-album-menu
+	padding-left: 5px
+
+.add-to-album-menu>li
+	padding-left: 10px
+
+.add-to-album-menu>li:hover
+	background-color: #F0F0F0
+	cursor: pointer
+
+.add-to-album-menu>div:hover
+	cursor: default
+
+// audio player in assets/audio_player.html
+.audiocontrols
+	display: flex
+	justify-content: center
+	align-items: center
+
+.audiobutton
+	background: none
+	width: 50px
+	height: 50px
+	border: none
+
+// Load more Button
+.endless_container
+	text-align: center
+	margin: 20px
+
+.endless_more
+	text-align: center
+	border-radius: 5px
+	-moz-border-radius: 5px
+	-webkit-border-radius: 5px
+	border: 2px solid #000000
+	padding: 5px 20px
+	color: #000000
+
+.endless_more:hover
+	text-decoration: none
+	color: #000000
+
+.spinner
+	animation: glyphicon-spin-r 2s infinite linear
+
+.endless_loading
+	margin: 20px
+
+.checkbox-button
+	text-align:center
+	text-decoration: none
+	text-align:center
+	border-radius: 5px
+	border: 2px solid #000000
+	padding: 5px 20px
+	color: #000000
+	margin: 0 0 0 0.5em
+
+.checkbox-button:hover
+	text-decoration: none
+	color: #000000
+
+.checkbox-li
+	display:block
+	float:left
+	margin: 0 0 2em 0
+	column-break-inside: avoid
+
+
+input[type='checkbox'].tags-checkbox:checked + label > i:last-of-type
+input[type='checkbox'].tags-checkbox + label > i:first-of-type
+	display: none
+
+input[type='checkbox'].tags-checkbox:checked + label > i:first-of-type
+	display: inline-block
+
+#checkboxesResponsive
+	display: none
+	padding: 0 0 0 1em
+
+
+.shorten-group-name
+	max-width: 250px
+	ellipsis()
+
+@media screen and (max-width: 960px)
+	#checkboxes
+		display: none
+	#checkboxesResponsive
+		display: inline-block
+	.shorten-group-name
+		width: 200px
+
+//remove focus outline for navigating between images
+.ekko-lightbox-nav-overlay
+	a
+		outline: none
+
+.shorten-text-sidebar
+		display: inline-block
+		max-width: 200px
+		ellipsis()
+
+.shorten-text-link
+	display: inline-block
+	max-width: 250px
+	ellipsis()

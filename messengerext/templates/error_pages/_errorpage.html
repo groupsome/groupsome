@@ -1,0 +1,69 @@
+{% load i18n staticfiles compress %}
+
+{% load i18n staticfiles compress %}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>groupsome</title>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/static/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="/static/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/static/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/static/favicons/manifest.json">
+	<link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="/static/favicons/favicon.ico">
+
+	<meta name="msapplication-config" content="/static/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+    {% block style %}
+    {% compress css %}
+    <link rel="stylesheet" href="{% static "style/main.css" %}" />
+    {% endcompress %}
+    <link href="{% static "font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+    {% endblock %}
+
+    <title> {% block title %} groupsome {% endblock %} </title>
+
+</head>
+
+<body class="error-page">
+
+    <div class="logo-container">
+        <a class="error-logo" href="{% url 'home:home' %}"><img src="{% static "img/gsLogo.svg" %}"/><img src="{% static "img/gsText.svg" %}"/></a>
+    </div>
+
+    <div class="error-page-container">
+
+        <div class="error-container">
+            <div class="error-info">{% trans "Ooops, an error occurred:" %}</div>
+            <span class="error-number">
+                {% block errorNumber %}
+
+                {% endblock %}
+            </span>
+        </div>
+        <br>
+        <span class="error-text">
+            {% block errorText %}
+
+            {% endblock %}
+        </span>
+        <br>
+        <br>
+        <div class="error-text">
+            <i class="fa fa-caret-right" aria-hidden="true"></i> <b> Back to <a href="{% url 'home:home' %}">groupso.me</a>  Homepage </b>
+            </div>
+    </div>
+<!-- /.container in subclass -->
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>
+

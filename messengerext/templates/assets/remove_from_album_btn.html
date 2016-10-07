@@ -1,0 +1,13 @@
+{% load i18n %}
+{% if album %} <!-- in case we're not in a group album -->
+    <div class="btn-group pull-right manage-album-btn">
+        <div type="button"
+             title="{% trans "remove image from this album" %}"
+             class="remove-from-album-btn"
+             data-album-id="{{ album.id }}"
+             data-photo-id="{{ obj.id }}">
+            <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+            <span class="sr-only">{% trans "remove image" %}</span>
+        </div>
+    </div>
+{% endif %}

@@ -1,0 +1,178 @@
+.surveys
+	// radiobuttons
+
+
+	.btn.active
+		color: #fff
+		background-color: #484848
+		border-color: #313131
+		box-shadow: none
+		
+		&:hover
+			text-decoration: none
+			color: #fff
+			background-color: #484848
+			border-color: #313131
+
+	// surveylist
+
+	.survey-question
+		font-size: 1.3em
+		margin-left: 0px
+
+		i
+			cursor: default
+
+	.survey-details
+		font-size: 1em
+		margin-left: 0px
+		margin-top: 0.5px
+
+	.survey-list
+		position: relative
+		padding: 20px
+		display: block
+		margin: 0 0em 10px
+
+	.survey-attending
+		font-size: 60px
+		color: #333
+
+	.survey-list-details
+		//display: none
+
+	.avatar
+		padding: 1px
+		height: 46px
+		width: 46px
+		margin-top: 5px
+
+	.survey-more
+		position: absolute
+		left: 50%
+		top: 85%
+
+	.survey-options
+		position: absolute
+		right: 10px
+		bottom: 0px
+
+		.dropdown-toggle
+			padding: 5px
+			padding-bottom: 0px
+			color: #333
+			font-size: 25px
+
+	.choice
+		margin-left: 15px
+
+	#survey_vote
+		margin: 15px
+
+	.feed-placeholder
+		margin-top: 10px
+
+	.survey-list-placeholder
+		margin-top: 20px
+
+	.progress
+		margin-bottom: 0px
+		margin-top: 10px
+
+	.has-votes
+		cursor: hand
+		cursor: pointer
+
+	.survey-change-vote-btn
+		margin: 0px
+
+	.shorten-text
+		display: inline-block
+		max-width: 500px
+		ellipsis()
+
+	.shorten-text-modal
+		overflow: hidden
+		text-overflow: ellipsis
+
+	.fieldset
+		border: none
+		margin-left: 10px
+
+	.survey-grouppic
+		display: block
+		float: right
+		height: 75px
+		width: 75px
+
+	@media screen and (max-width: 992px)
+		.shorten-text
+			width: 400px
+		.survey-list-details
+			display: none
+
+	@media screen and (max-width: 620px)
+		.shorten-text
+			width: 330px
+
+	@media screen and (max-width: 500px)
+		.shorten-text
+			width: 260px
+		.survey-grouppic
+			display: none
+
+	@media screen and (min-width: 992px)
+		.shorten-text
+			width: 700px
+		.survey-list-details
+			display: auto
+
+	.progress
+		position: relative
+		span
+			position: absolute
+			display: block
+			text-align: center
+			text-shadow: 0px 1px 2px #000
+			-webkit-user-select: none
+			-moz-user-select: none
+			-ms-user-select: none
+			user-select: none
+
+
+	.progress-bar[aria-valuenow="0%"]
+		span
+			color: gray
+			background: transparent
+			box-shadow: none
+			text-shadow: none
+
+
+	.user-vote
+		background: #33b796
+
+	.newSurvey
+		float: right
+
+	.dropdown-btn
+		border-radius: 4px
+		text-align: left
+		background-color: #fff !important
+
+
+	.dropdown-caret
+		position: absolute
+		right: 25px
+		top: 16px
+
+	.col-md-3 .dropdown-menu
+		width: 100%
+
+	.open-select
+		margin-bottom: -10px
+
+.distance-div
+	height: 3px
+
+.options-dropdown
+	min-width: 100px

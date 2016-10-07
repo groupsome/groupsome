@@ -1,0 +1,11 @@
+{% extends "_base.html" %}
+{% load i18n staticfiles %}
+
+{% block title %} groupsome - {% trans "Create Survey" %} {% endblock %}
+
+
+{% block content %}
+
+    {% include "surveys/assets/create_survey_content.html" with user_groups=user_groups %}
+
+{% endblock %}

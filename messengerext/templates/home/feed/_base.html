@@ -1,0 +1,30 @@
+{% load i18n %}
+
+<div class="item item-{% block item_type %}{% endblock %}">
+	{% block item_action %}
+		{% if inside_group %}
+			<p class="item-action"><a href="{% url "userprofile:user" user_id=obj.user.id %}">{% if obj.user.first_name %}{{obj.user.first_name}}{% else %}{{obj.user.username}}
+				{% endif %}</a> {% block item_action_text_without_group %}{% endblock %}</p>
+		{% else %}
+			<p class="item-action"><a href="{% url "userprofile:user" user_id=obj.user.id %}">{% if obj.user.first_name %}{{obj.user.first_name}}{% else %}{{obj.user.username}}
+				{% endif %}</a> {% block item_action_text %}{% endblock %} <a href="{{ obj.group.url }}">{{ obj.group }}</a></p>
+		{% endif %}
+	{% endblock %}
+	
+	{% block item_media %}{% endblock %}
+	
+	{% block item_description %}{% endblock %}
+		
+	{% block item_info %}
+		<p class="item-info">
+			{% trans "posted" %}
+			<span data-livestamp="{{ obj.timestamp|date:"c" }}"></span>
+			<span class="timestamp hidden">{{ obj.timestamp|date:"Y-m-d-H:i:s" }}</span>
+			{% block item_chatlog %}
+				<a href="#" class="chatlog-button" data-content-type="{% block chatlog_content_type %}{{ obj.type }}{% endblock %}" data-content-id="{% block chatlog_content_id %}{{ obj.id }}{% endblock %}"><i class="fa fa-comments pull-right"></i></a>
+			{% endblock %}
+		</p>
+	{% endblock %}
+	
+	{% block item_actions %}{% endblock %}
+</div>

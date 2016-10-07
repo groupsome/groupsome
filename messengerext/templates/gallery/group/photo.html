@@ -1,0 +1,30 @@
+{% extends "groups/_base.html" %}
+{% load i18n staticfiles compress %}
+
+{% block body_classes %}{{ block.super }} group-photo-detail-view{% endblock %}
+{% block title %}{% trans "Photos" %} - {{ block.super }}{% endblock %}
+
+{% block group_content %}
+	<section class="group-photo">
+		<img src="{{ photo.media_url }}" alt="" />
+		<div class="group-photo-background" style="background-image: url({{ photo.media_url }});"></div>
+	</section>
+
+	<section class="details-photo">
+		<a href="#" data-post-adress="{% url 'gallery:photo_rotate_left' photo_id=photo.id %}"
+		   class="photo-rotate-left-btn btn btn-default" role="button">
+			<i class="fa fa-rotate-left" aria-hidden="true"></i>
+		</a>
+		<a href="#" data-post-adress="{% url 'gallery:photo_rotate_right' photo_id=photo.id %}"
+		   class="photo-rotate-right-btn btn btn-default" role="button">
+			<i class="fa fa-rotate-right" aria-hidden="true"></i>
+		</a>
+
+		<div class="page-header">
+			<h2>{% trans "Chatlog" %}</h2>
+		</div>
+		<div class="chatlog chatlog-embed" data-content-type="photo" data-content-id="{{ photo.id }}"></div>
+	</section>
+
+
+{% endblock %}

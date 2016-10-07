@@ -1,0 +1,79 @@
+{% load i18n staticfiles compress %}
+
+    <p>
+        <span class="event icon">
+            <strong>{{ event.start|date:"M" }}</strong>
+            <span>{{ event.start|date:"d" }}</span>
+        </span>
+
+        <a href="{{ event.group.url }}" class="hidden-xs">
+            <img src="{{ event.group.chat_photo_media_url }}" alt=""
+                 class="img-circle event-grouppic"
+                 title="{{ event.group }}" data-toggle="tooltip" data-placement="bottom"/>
+        </a>
+
+
+        <div class="dropdown dropdown-attend">
+
+            {% if event in attending  %}
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle"> <span class="img circle fa fa-check event-attending" </a>
+            <ul class="dropdown-menu-right dropdown-menu dropdown-menu-attend">
+                <li><a class="attend-link" data-event-id="{{ event.id }}" data-status="maybe" href="#">{% trans "maybe attend" %}</a></li>
+                <li><a class="attend-link" data-event-id="{{ event.id }}" data-status="no" href="#">{% trans "don't attend" %}</a></li>
+            </ul>
+            {% else %}
+                {% if event in notattending %}
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle"> <span class="img circle fa fa-times event-attending"</a>
+                <ul class="dropdown-menu-right dropdown-menu dropdown-menu-attend">
+                    <li><a class="attend-link" data-event-id="{{ event.id }}" data-status="yes" href="#">{% trans "attend" %}</a></li>
+                    <li><a class="attend-link" data-event-id="{{ event.id }}" data-status="maybe" href="#">{% trans "maybe attend" %}</a></li>
+                </ul>
+                {% else %}
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle"> <span class="img circle fa fa-question event-attending"> </a>
+                <ul class="dropdown-menu-right dropdown-menu dropdown-menu-attend">
+                    <li><a class="attend-link" data-event-id="{{ event.id }}" data-status="yes" href="#">{% trans "attend" %}</a></li>
+                    <li><a class="attend-link" data-event-id="{{ event.id }}" data-status="no" href="#">{% trans "don't attend" %}</a></li>
+                </ul>
+
+                {% endif %}
+            {% endif %}
+        </div>
+
+        <span class="event-name shorten-text">{{event.name}}</span><br/>
+        <span class="event-details shorten-text">
+                                {% if event.allday %}
+                                    allday
+                                {% else %}
+                                    {{ event.start|time:"H:i" }}
+                                {% endif %}
+                                {% if event.location %}- {{event.location}} {% endif %}
+                            </span><br/>
+        <span class="event-details shorten-text">{{ event.group }}</span>
+
+        <div class="event-list-details">
+
+                {% for at in event.attending.all %}
+                {% if at.status == "yes" %}
+                {% ifchanged %} {% trans "attending" %} {% endifchanged %}
+                <a href="{% url "userprofile:user" user_id=at.user.id %}">
+                    <img src="{{ at.user.telegramuser.avatar_url }}" alt="" class="avatar img-circle"
+                     title="{% if at.user.first_name %}{{at.user.first_name}}{% else %}{{at.user.username}}{% endif %}"
+                     data-toggle="tooltip" data-placement="bottom" />
+                </a>
+                {% endif %}
+                {% endfor %}
+
+                {% for at in event.attending.all %}
+                {% if at.status == "no" %}
+                {% ifchanged %} {% trans "not attending" %} {% endifchanged %}
+                <a href="{% url "userprofile:user" user_id=at.user.id %}"><img src="{{ at.user.telegramuser.avatar_url }}" alt="" class="avatar img-circle"
+                     title="{% if at.user.first_name %}{{at.user.first_name}}{% else %}{{at.user.username}}{% endif %}"
+                     data-toggle="tooltip" data-placement="bottom" />
+                </a>
+                {% endif %}
+                {% endfor %}
+
+        </div>
+
+        {% include "assets/event_options.html" with event=event attending=event.attending.all%}
+    </p>

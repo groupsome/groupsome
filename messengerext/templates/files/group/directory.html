@@ -1,0 +1,84 @@
+{% extends "groups/_base.html" %}
+{% load i18n staticfiles compress ifrole %}
+
+{% block body_classes %}{{ block.super }}{% ifrole "admin" %} can-move-files{% endifrole %}{% endblock %}
+{% block title %}{% trans "Files" %} - {{ block.super }}{% endblock %}
+
+{% block group_content %}
+	<div class="section group-files">
+		<div class="page-header">
+			{% ifrole "admin" %}
+				<div class="btn-toolbar pull-right">
+					<div class="btn-group">
+						<button class="btn btn-default files-create-folder-btn" data-group-id="{{ group.id }}" data-parent-id="{% if directory %}{{ directory.id }}{% else %}0{% endif %}"><i class="fa fa-folder-o"></i> {% trans "Create folder" %}</button>
+					</div>
+				</div>
+			{% endifrole %}
+			
+			<h2>{% if directory %}{{ directory.name }}{% else %}{% trans "Files" %}{% endif %}</h2>
+		</div>
+		
+		<table class="table file-table">
+			{% if directory or files %}
+			<thead>
+				<tr>
+					<th class="column-name" colspan="2">{% trans "Name" %}</th>
+					<th class="column-uploaded">{% trans "Posted" %}</th>
+					<th class="column-actions"></th>
+				</tr>
+			</thead>
+			<tbody>
+			{% endif %}
+				{% if directory %}
+					<tr class="directory" data-group-id="{{ group.id }}" data-directory-id="{% if directory.parent == None %}0{% else %}{{ directory.parent.id }}{% endif %}">
+						<td class="column-icon"><i class="fa fa-arrow-up"></i></td>
+						<td class="column-name"><a href="{% if directory.parent == None %}{% url 'groups:file_overview' group_id=group.id %}{% else %}{% url 'groups:file_directory' group_id=group.id directory_id=directory.parent.id %}{% endif %}">..</a></td>
+						<td class="column-uploaded"></td>
+						<td class="column-actions"></td>
+					</tr>
+				{% endif %}
+				
+				{% for d in directories %}
+					<tr class="directory" data-group-id="{{ group.id }}" data-directory-id="{{ d.id }}">
+						<td class="column-icon"><i class="fa fa-folder-o"></i></td>
+						<td class="column-name"><a href="{% url 'groups:file_directory' group_id=group.id directory_id=d.id %}">{{ d.name }}</a></td>
+						<td class="column-uploaded"></td>
+						<td class="column-actions">
+							{% ifrole "admin" %}
+								<i class="fa fa-trash delete-button directory-delete-btn" data-group-id="{{ group.id }}" data-directory-id="{{ d.id }}"></i>
+							{% endifrole %}
+						</td>
+					</tr>
+				{% endfor %}
+				
+				{% for file in files %}
+					<tr class="file" data-file-id="{{ file.id }}">
+						<td class="column-icon"><i class="fa fa-{{ file.icon }}"></i></td>
+						<td class="column-name"><a href="{{ file.media_url }}" download>{{ file.file_name }}</a></td>
+						<td class="column-uploaded"><span data-livestamp="{{ file.timestamp|date:"c" }}"></span> {% trans "by" %} {% if file.user.first_name %}
+							{{file.user.first_name}}{% else %}{{file.user.username}}{% endif %}</td>
+						<td class="column-actions">
+							{% ifrole admin %}
+								<i class="fa fa-trash delete-button file-delete-btn" data-group-id="{{ group.id }}" data-file-id="{{ file.id }}"></i>
+							{% endifrole %}
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		{% if not directory and not files %}
+		<div class="feed-placeholder">
+			<div class="alert alert-info">
+				<p>
+					{% trans "It looks so empty here =(" %}
+				</p>
+				<p>
+					{% trans "Post something in this group" %}
+				</p>
+			</div>
+		</div>
+		{% endif %}
+		<br/>
+		<br/>
+	</div>
+{% endblock %}

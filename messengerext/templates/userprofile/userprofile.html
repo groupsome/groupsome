@@ -1,0 +1,99 @@
+{% extends "_base.html" %}
+{% load i18n staticfiles compress %}
+
+{% block content %}
+<div class="container" data-endless-paginate="true">
+    <h2 class="headline-activities">
+        {% if user.first_name %}
+        {% blocktrans with name=user.first_name %} {{name}}'s activities {% endblocktrans %}
+        {% else %}
+        {% blocktrans with name=user.username %}  {{name}}'s activities {% endblocktrans %}
+        {% endif %}
+    </h2>
+
+
+    <div class="row">
+        <div class="col-sm-8 group-content">
+        {% if feed_list %}
+            <div class="group-feed feed" data-endless-paginate="true">
+                {% include "home/feed.html" %}
+            </div>
+        {% else %}
+            <div class="feed-placeholder">
+                <div class="alert alert-info">
+                    <p>        {% if user.first_name %}
+                        {% blocktrans with name=user.first_name %} {{name}} has no activities{% endblocktrans %}
+                        {% else %}
+                        {% blocktrans with name=user.username %}  {{name}} has no activities{% endblocktrans %}
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        {% endif %}
+        </div>
+
+        <div class="col-sm-4 group-sidebar">
+
+            {% block user_detail_sidebar %}
+            <div class="panel panel-default user-details">
+                <div class="panel-heading">
+                    {% trans "Info" %}
+                    <img src="{{ user.telegramuser.avatar_url }}" alt="" class="avatar-big img-circle"/>
+                </div>
+                <div class="panel-body">
+                    <p>{{user.username}}</p>
+
+                    <p> {% if user.first_name %}{{user.first_name}}{% endif %}
+                        {% if user.last_name %}{{user.last_name}}{% endif %}</p>
+
+
+
+                </div>
+            </div>
+
+            {% endblock %}
+
+            {% block group_sidebar %}
+            <div class="panel panel-default group-members">
+                <div class="panel-heading">{% trans "Common Groups" %}</div>
+                <div class="panel-body">
+                    {% for group in user_groups %}
+                    <a href="{{ group.url }}">
+                        <img src="{{ group.chat_photo_media_url }}" alt=""
+                             class="img-circle avatar"
+                             title="{{ group }}" data-toggle="tooltip" data-placement="bottom"/>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endblock %}
+
+            {% block events_sidebar %}
+            <div class="panel panel-default">
+                <div class="panel-heading">{% trans "Events you might meet" %}</div>
+                <div class="panel-body">
+                    {% if upcoming_events %}
+                            {% for event in upcoming_events %}
+                            <p>
+
+                                {% include "assets/event_icon.html" with event=event %}
+
+                            </p>
+                            {% endfor %}
+
+                        <div style="float:right;"><a href="{% url 'events:events' %}">{% trans "Show more" %}</a></div>
+                    {% else %}
+                        <p> {% if user.first_name %}
+                            {% blocktrans with name=user.first_name %} What about inviting {{name}} to a party? {% endblocktrans %}
+                            {% else %}
+                            {% blocktrans with name=user.username %}  What about inviting {{name}} to a party? {% endblocktrans %}
+                            {% endif %}
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}

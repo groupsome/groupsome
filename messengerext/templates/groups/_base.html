@@ -1,0 +1,125 @@
+{% extends "_base.html" %}
+{% load i18n staticfiles compress active bootstrap3 ifrole %}
+
+{% block title %}{{ group.name }} - {{ block.super }}{% endblock %}
+
+{% block messages %}{% endblock %}
+
+{% block content %}
+	<section class="group">
+		{% block group_header %}
+			<header style="background-image: url({{ group.header_media_url }});">
+				<div class="header-text{% if group.description %} has-description{% endif %}">
+					<div class="header-text-inner">
+						<div class="container">
+							<h1>{{ group.name }}</h1>
+							{% if group.description %}
+								<p>{{ group.description }}</p>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+				
+				<nav class="navbar navbar-default navbar-static-top">
+					<div class="container">
+						<ul class="nav navbar-nav">
+							<li{% ifactive "groups:feed" %} class="active"{% endifactive %}><a href="{% url 'groups:feed' group_id=group.id %}">{% trans "Feed" %}</a></li>
+							<li{% ifactive "groups:photo_*" %} class="active"{% endifactive %}><a href="{% url 'groups:photo_overview' group_id=group.id %}">{% trans "Photos" %}</a></li>
+							<li{% ifactive "groups:videos" %} class="active"{% endifactive %}><a href="{% url 'groups:videos' group_id=group.id %}">{% trans "Videos" %}</a></li>
+							<li{% ifactive "groups:file_*" %} class="active"{% endifactive %}><a href="{% url 'groups:file_overview' group_id=group.id %}">{% trans "Files" %}</a></li>
+							<li{% ifactive "groups:audios" %} class="active"{% endifactive %}><a href="{% url 'groups:audios' group_id=group.id %}">{% trans "Audios" %}</a></li>
+							<li{% ifactive "groups:links" %} class="active"{% endifactive %}><a href="{% url 'groups:links' group_id=group.id %}">{% trans "Links" %}</a></li>
+						</ul>
+						{% ifrole "admin" %}
+							<ul class="nav navbar-nav navbar-right">
+								<li{% ifactive "groups:settings" %} class="active"{% endifactive %}><a href="{% url 'groups:settings' group_id=group.id %}"><i class="fa fa-cog"></i></a></li>
+							</ul>
+						{% endifrole %}
+					</div>
+				</nav>
+			</header>
+		{% endblock %}
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 group-content">
+					{% bootstrap_messages %}
+					
+					{% block group_content %}
+						
+					{% endblock %}
+				</div>
+				<div class="col-sm-4 group-sidebar">
+					{% block group_sidebar %}
+						<div class="panel panel-default group-members">
+							<div class="panel-heading">{% trans "Members" %}</div>
+							<div class="panel-body">
+								{% for user in group_members %}
+									<a href="{% url "userprofile:user" user_id=user.id %}">
+										<img src="{{ user.telegramuser.avatar_url }}" alt=""
+											 class="avatar img-circle"
+											 title="{% if user.first_name %}{{user.first_name}}{% else %}{{user.username}}
+										 	{% endif %}" data-toggle="tooltip" data-placement="bottom" />
+									</a>
+								{% endfor %}
+							</div>
+						</div>
+					{% endblock %}
+
+					{% block events_sidebar %}
+						<div class="panel panel-default">
+							<div class="panel-heading">{% trans "Upcoming Events" %}</div>
+							<div class="panel-body">
+								{% if upcoming_events %}
+									{% for event in upcoming_events %}
+										<p>
+
+										{% include "assets/event_icon.html" with event=event %}
+
+										</p>
+									{% endfor %}
+
+
+									<div style="float:right;"><a href="{% url 'events:events' %}">{% trans "Show more" %}</a></div>
+								{% else %}
+									<p>{% trans "Take your phone and start a /newevent" %}</p>
+								{% endif %}
+							</div>
+						</div>
+					{% endblock %}
+
+					{% block surveys_sidebar %}
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								{% if surveys %}
+									<div class="numberCircle">{{ surveys_counter }}</div>
+								{% else %}
+									<div class="numberCircle">0</div>
+								{% endif %}
+								{% if surveys_counter == 1  %}
+									{% trans "Open Survey" %}</div>
+								{% else %}
+									{% trans "Open Surveys" %}</div>
+								{% endif %}
+
+							<div class="panel-body survey-panel">
+								{% if surveys %}
+									{% for survey in surveys %}
+										<p>
+
+										{% include "assets/survey_icon.html" with surveys=surveys request=request%}
+
+										</p>
+									{% endfor %}
+									<div style="float:right;"><a href="{% url 'surveys:surveys' %}">{% trans "Show more" %}</a></div>
+								{% else %}
+									<p>{% trans "Take your phone and start a /newsurvey" %}</p>
+								{% endif %}
+							</div>
+						</div>
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

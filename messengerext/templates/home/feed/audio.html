@@ -1,0 +1,26 @@
+{% extends "home/feed/_base.html" %}
+{% load i18n %}
+
+{% block item_type %}{{ obj.type }}{% endblock %}
+
+{% block item_action_text %}{% trans "posted an audio file to" %}{% endblock %}
+{% block item_action_text_without_group %}{% trans "posted an audio file" %}{% endblock %}
+
+{% block item_media %}
+	<div class="item-media">
+		{% include "assets/audio_player.html" with obj=obj %}
+	</div>
+{% endblock %}
+
+
+{% block item_description %}
+	{% if obj.title %}
+	<p class="item-description">
+	<span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+	{{ obj.title }}
+		{% if obj.interpret %}
+		- {{ obj.interpret }}
+		{% endif %}
+	</p>
+	{% endif %}
+{% endblock %}

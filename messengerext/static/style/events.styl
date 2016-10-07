@@ -1,0 +1,141 @@
+.events
+	#calendar
+		margin: 0.5em 2em 0 2em
+		
+	// radiobuttons
+
+
+	.btn.active
+		color: #fff
+		background-color: #484848
+		border-color: #313131
+		box-shadow: none
+		
+		&:hover
+			text-decoration: none
+			color: #fff
+			background-color: #484848
+			border-color: #313131
+
+	// eventlist
+
+	.event.icon
+		font-size: 1.6em
+		display: block
+		position: relative
+		width: 70px
+		height: 80px
+		background-color: #666666
+		overflow: hidden
+		padding: 4px
+		float: left
+		margin-top: 15px
+
+	.event-name
+		font-size: 2em
+		margin-left: 10px
+
+	.event-details
+		font-size: 1em
+
+	.event-list
+		position: relative
+		padding: 20px
+		display: block
+		margin: 0 0em 10px
+
+	.event-year
+		display: block
+		margin: 20px
+
+	.dropdown-attend
+		float: right
+		padding-right: 20px
+		width: 75px
+		text-align: center
+		margin-top: 15px
+
+	.event-attending
+		font-size: 60px
+		color: #333
+
+	.event-grouppic
+		display: block
+		float: right
+		height: 75px
+		width: 75px
+		margin-top: 15px
+
+	.event-list-details
+		//display: none
+
+	.avatar
+		padding: 5px
+		height: 50px
+		width: 50px
+
+	.event-more
+		position: absolute
+		left: 50%
+		top: 85%
+
+	.event-options
+		position: absolute
+		right: 10px
+		bottom: 0px
+
+		.dropdown-toggle
+			padding: 5px
+			color: #333
+			font-size: 25px
+
+	.feed-placeholder
+		margin-top: 10px
+
+.newEvent
+	float: right
+
+.dropdown-btn
+	border-radius: 4px
+	text-align: left
+	background-color: #fff !important
+
+.dropdown-caret
+	position: absolute
+	right: 25px
+	top: 16px
+
+.col-md-3 .dropdown-menu
+	width: 100%
+
+
+.shorten-text
+	display: inline-block
+	max-width: 500px
+	ellipsis()
+
+.shorten-text-modal
+	overflow: hidden
+	text-overflow: ellipsis
+
+@media screen and (max-width: 992px)
+	.shorten-text
+		width: 250px
+	.event-list-details
+		display: none
+
+@media screen and (max-width: 620px)
+	.shorten-text
+		width: 175px
+
+@media screen and (max-width: 520px)
+	.shorten-text
+		width: 100px
+
+@media screen and (min-width: 992px)
+	.shorten-text
+		width: 700px
+	.event-list-details
+		display: auto
+
+

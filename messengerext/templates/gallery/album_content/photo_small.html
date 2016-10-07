@@ -1,0 +1,13 @@
+{% load i18n ifrole %}
+
+<div class="item">
+	<a class="photo-wrapper" href="{% if album %}{% url 'groups:photo_album_photo_detail' group_id=photo.group.id album_id=album.id photo_id=photo.id %}{% else %}{% url 'groups:photo_detail' group_id=photo.group.id photo_id=photo.id %}{% endif %}"{% if not album %} data-toggle="lightbox" data-gallery="multiimages" data-type="image" data-remote="{{ photo.media_url }}"{% endif %}>
+		<div class="photo" style="background-image:url('{{photo.thumbnail_media_url}}');"></div>
+	</a>
+	
+	{% ifrole "admin" %}
+		{% include "assets/photo_options.html" with photo=photo albums=albums group=group %}
+	{% endifrole %}
+	
+	<h4>{% blocktrans with user=photo.user %}by {{user}}{% endblocktrans %}</h4>
+</div>

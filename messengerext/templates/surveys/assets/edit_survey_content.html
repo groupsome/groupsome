@@ -1,0 +1,68 @@
+{% load i18n staticfiles %}
+
+{% block content %}
+<div class="container">
+    <h1 id="user">{% trans "Edit Survey" %}</h1>
+    <br>
+    <br>
+    <div class="personal-info">
+
+
+        <form class="form-horizontal" method="post" action="/surveys/{{survey.id}}/edit_survey">
+            {% csrf_token %}
+
+            <div class="form-group">
+
+                <label class="col-md-2 control-label">{% trans "Question" %}:</label>
+                <div class="col-md-3">
+                    <input class="form-control shorten-text-modal" name="question" id="question_edit" value="{{survey.question}}" maxlength="100" type="text" >
+                </div>
+
+            </div>
+
+            {% for option in survey.choices.all %}
+
+                <div class="form-group">
+
+                        <label class="col-md-2 control-label">{% trans "Option" %} {{ forloop.counter }}:</label>
+                        <div class="col-md-3">
+                            <input class="form-control" required name="option_{{ forloop.counter }}" id="option_{{ forloop.counter }}_edit" maxlength="100" type="text" value="{{option.option}}" >
+                        </div>
+                        {% if forloop.last and forloop.counter > 2 %}
+                            <div class="col-md-1 ">
+                                <div class="distance-div hidden-lg hidden-md"> </div>
+                                <div id="remove-option-btn-edit" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                                </div>
+                            </div>
+                        {% endif %}
+                </div>
+            {% endfor %}
+
+
+            <div class="form-group">
+
+                <label class="col-md-2 control-label"></label>
+                <div class="col-md-3">
+                    <div id="add-option-btn-edit" class="btn btn-default">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <label class="col-md-2 control-label"></label>
+                <div class="col-md-3">
+                    <input class="btn btn-primary" id="survey-edit-save" name="edit_survey" value="{% trans 'Save' %}" type="submit">
+                    <span></span>
+                    <input id="cancel-button-modal" class="btn btn-default" data-dismiss="modal" value="{% trans 'Cancel' %}" type="reset">
+                    <a id="cancel-button-link" class="btn btn-default hidden" href="{% url 'surveys:surveys' %}">{% trans "Cancel" %}</a>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,2 @@
+* * * * * source /environment.sh && cd /app/messengerext && /usr/local/bin/python manage.py cleanuptokens --settings=config.settings_docker >> /var/log/cron.log 2>&1
+0 0 * * * source /environment.sh && cd /app/messengerext && /usr/local/bin/python manage.py cleanupmedia --settings=config.settings_docker >> /var/log/cron.log 2>&1

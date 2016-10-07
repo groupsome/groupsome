@@ -1,0 +1,19 @@
+{% extends "groups/_base.html" %}
+{% load i18n staticfiles compress bootstrap3 ifrole %}
+
+{% block title %}{% trans "Settings" %} - {{ block.super }}{% endblock %}
+
+{% block group_content %}
+	<form class="form-horizontal group-settings-form" method="post" action="{% url 'groups:settings' group_id=group.id %}" enctype="multipart/form-data">
+		{% csrf_token %}
+		
+		{% bootstrap_form form layout="horizontal" %}
+		
+		{% buttons layout="horizontal" %}
+			<div class="text-right">
+				<button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+				<a href="{{ group.url }}" class="btn btn-default">{% trans "Cancel" %}</a>
+			</div>
+		{% endbuttons %}
+	</form>
+{% endblock %}

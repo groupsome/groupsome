@@ -1,0 +1,17 @@
+{% extends "chatlog/content/_base.html" %}
+{% load i18n %}
+
+{% block item_content %}
+	<div class="chatlog-item-audio-content">
+		<p class="chatlog-item-username">{{ item.user.username }}</p>
+		<p class="chatlog-item-audio-icon pull-left"><i class="fa fa-volume-up"></i></p>
+		<div>
+			<p class="chatlog-item-audio-title">{{ item.full_title }}</p>
+			{% include "assets/audio_player.html" with obj=item %}
+		</div>
+		<p class="chatlog-item-info pull-right">
+			<span data-livestamp="{{ item.timestamp|date:"c" }}"></span>
+			<span class="timestamp hidden">{{ item.timestamp|date:"Y-m-d-H:i:s" }}</span>
+		</p>
+	</div>
+{% endblock %}

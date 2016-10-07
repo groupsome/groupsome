@@ -1,0 +1,163 @@
+&.login
+	padding-top: 40px
+	padding-bottom: 40px
+	background-color: #eee
+	text-align: center
+	color: white
+	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif
+
+	background: url(../img/background.jpg)
+	background-size: cover
+	background-position: center center
+	background-attachment: fixed
+
+	h1
+		text-align: center
+		margin: 60px auto 0px auto
+		width: 100%
+
+	a
+		color:#ffffff
+
+	.logo-image
+		margin-right: 5px
+		display: inline-block
+	
+	.logo-text
+		display: inline-block
+
+	h2
+		margin-bottom: 5px
+
+	.form-signin
+		width: auto
+		margin: 0 auto
+
+	.form-signin .form-signin-heading
+	.form-signin .checkbox
+		margin-bottom: 10px
+	
+	.form-signin .checkbox
+		font-weight: normal
+	
+	.form-signin .form-control
+		position: relative
+		height: auto
+		box-sizing: border-box
+		padding: 10px
+		font-size: 16px
+		margin-bottom: 5px
+	
+	.form-signin .form-control:focus
+		z-index: 2
+	
+	.form-signin input[type="email"]
+		margin-top: 5px
+		margin-bottom: 5px
+		border-bottom-right-radius: 0
+		border-bottom-left-radius: 0
+	
+	.form-signin input[type="password"]
+		margin-bottom: 10px
+	
+	.loginError
+		color: #F24848
+		margin-bottom: 5px
+
+	.registerDiv
+		float: left
+		border-left-style: solid
+		border-color: gray
+		font-size: 30px
+		margin-left: 30px
+		margin-top: 30px
+		padding-left: 30px
+		width: 430px
+
+	.registerDivMobil
+		float: left
+		font-size: 30px
+		margin-top: 30px
+		height: 236px
+		width: 350px
+
+	.registerTextDiv
+		font-size: 18px
+		height: 78px
+		margin: 5px 0px 26px 0px
+	
+	#loginDiv
+		margin-top: 3%
+		margin-left: auto
+		margin-right: auto
+		width: auto
+		padding: 0
+		display: inline-block
+
+	.formDiv
+		float: left
+		width: 350px
+		margin-top: 30px
+	
+	.space
+		margin-bottom: 10px
+	
+	.modal
+		text-align: center
+		color: black
+	
+	@media screen and (min-width: 768px)
+		.modal:before
+			display: inline-block
+			vertical-align: middle
+			content: " "
+			height: 100%
+
+	.modal-dialog
+		display: inline-block
+		text-align: left
+		vertical-align: middle
+
+	@media screen and (max-width: 1081px)
+		.formDiv
+			float: unset
+			width: 100%
+			max-width: 350px
+			margin-top: 10%
+			margin-left: auto
+			margin-right: auto
+
+		.form-signin-heading
+			margin-bottom: 20% !important
+	
+	.registerDivMobil
+		margin-top: 20px
+		width: 100%
+		
+		div
+			width: 100%
+			max-width: 350px
+			margin-left: auto
+			margin-right: auto
+
+	.btn
+		text-transform: uppercase
+		font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif
+		font-weight: 400
+		-webkit-transition: all .3s ease-in-out
+		-moz-transition: all .3s ease-in-out
+		transition: all .3s ease-in-out
+	
+	.qrcode
+		height: 195px
+		width: 195px
+		margin: auto
+		border: 10px solid #fff
+		background-color: #fff
+	
+	.form-signin-heading-spacing
+		margin-top: 28px
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+	body.login
+		background-image: url(../img/background@2x.jpg)

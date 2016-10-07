@@ -1,0 +1,13 @@
+{% load i18n ifrole %}
+
+<div class="item">
+    <a class="photo-wrapper" href="{{ BASE_URL }}{{photo.media_url}}"
+       data-toggle="lightbox" data-gallery="multiimages" data-type="image">
+        <div class="photo" style="background-image:url('{{photo.thumbnail_media_url}}');"></div>
+    </a>
+    <h4>{% blocktrans with user=photo.user %} uploaded by {{user}}{% endblocktrans %}</h4>
+    
+    {% ifrole "admin" %}
+    	{% include "assets/photo_options.html" with photo=photo albums=albums group=group %}
+    {% endifrole %}
+</div>

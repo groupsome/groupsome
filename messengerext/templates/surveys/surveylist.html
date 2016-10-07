@@ -1,0 +1,121 @@
+{% load i18n staticfiles compress app_filters%}
+
+    <p>
+        <a href="{{ survey.group.url }}">
+            <img src="{{survey.group.chat_photo_media_url }}" alt=""
+                 class="img-circle survey-grouppic"
+                 title="{{ survey.group }}" data-toggle="tooltip" data-placement="bottom"/>
+        </a>
+
+        <span class="survey-question">{{survey.question}}
+            {% if survey.multiselect %}
+                <i class="fa fa-check-square-o" aria-hidden="true" title="{% trans "You can chose one or more options." %}"></i>
+                <i class="fa fa-check-square-o" aria-hidden="true" title="{% trans "You can chose one or more options." %}"></i>
+            {% else %}
+                <i class="fa fa-check-circle-o" aria-hidden="true" title="{% trans "You can chose one option." %}"></i>
+            {% endif %}
+        </span><br/>
+        <span class="survey-details shorten-text">
+            {{ survey.creator }}
+            <span data-livestamp="{{ survey.created|date:"c" }}"></span>
+        </span>
+        <br>
+
+        <span class="survey-details shorten-text">{{ survey.group }} ({{ survey|survey_user_voted_count }} {% trans "of" %} {{ survey.group.users.count }} {% trans " voted" %} {% if survey.status == "open" %} {% trans " so far" %}{% endif %})</span> <br/>
+
+        {% if survey.status == "open" %}
+            {% if survey|user_voted:request %}
+                <div>
+                    <div>
+                        {% for choice in survey.choices.all %}
+                            <div class="progress show-voted-users {% if choice|choice_votes > 0 %} has-votes {% endif %}" title="{{choice|choice_percentage}}">
+                                <div class="progress-bar progress-bar-custom {% if choice|user_voted_for_choice:request %} user-vote {% endif %}" role="progressbar" aria-valuenow="{{choice|choice_percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{choice|choice_percentage}};">
+                                    <span style="width:{{choice|choice_percentage}}; min-width:300px;"> {{choice.option}} - {{choice|choice_votes}}
+                                        {% if choice|choice_votes == 1 %} {% trans "vote" %} {% else %} {% trans "votes" %} {% endif %} </span>
+                                </div>
+                            </div>
+                            <div class="user-pics hidden">
+                                {% for user in choice|users_from_choice %}
+                                    <a href="{% url "userprofile:user" user_id=user.id %}">
+                                        <img src="{{ user.telegramuser.avatar_url }}" alt="" class="avatar img-circle"
+                                         title="{% if user.first_name %}{{user.first_name}}{% else %}{{user.username}}{% endif %}"
+                                         data-toggle="tooltip" data-placement="bottom" />
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <br>
+                    <input class="btn btn-primary survey-change-vote-btn" name="{{survey.id}}" value="{% trans 'Change vote'%}" type="button">
+                </div>
+
+                <div class="hidden">
+                        <div class="open-select" >
+                        {% for choice in survey.choices.all %}
+                            <label class="tasks-list-item">
+                                {% if survey.multiselect %}
+                                    <input class="choice tasks-list-cb" type="checkbox" id="survey{{survey.id}}-{{ forloop.counter }}" {% if choice|user_voted_for_choice:request %} checked {% endif %} name="survey{{survey.id}}" value="{{choice.id}}">
+                                    <span class="tasks-list-mark"></span>
+                                {% else %}
+                                    <input class="choice tasks-list-cb" type="radio" id="survey{{survey.id}}-{{ forloop.counter }}" {% if choice|user_voted_for_choice:request %} checked {% endif %} name="survey{{survey.id}}" value="{{choice.id}}">
+                                    <span class="tasks-list-mark tasks-list-radio"></span>
+                                {% endif %}
+                                <span class="tasks-list-desc">{{choice.option}}</span>
+                            </label>
+                            <br>
+                        {% endfor %}
+                        </div>
+                        <br>
+                        <input class="btn btn-primary survey-vote-btn" name="{{survey.id}}" value="{% trans 'Vote'%}" type="button">
+                        <input class="btn btn-default survey-cancel-vote-btn" value="{% trans 'Cancel'%}" type="button">
+                </div>
+            {% else %}
+                <div >
+                        <div class="open-select" >
+                        {% for choice in survey.choices.all %}
+
+                                <label class="tasks-list-item">
+                                    {% if survey.multiselect %}
+                                        <input class="choice tasks-list-cb" type="checkbox" id="survey{{survey.id}}-{{ forloop.counter }}" name="survey{{survey.id}}" value="{{choice.id}}">
+                                        <span class="tasks-list-mark"></span>
+                                    {% else %}
+                                        <input class="choice tasks-list-cb" type="radio" id="survey{{survey.id}}-{{ forloop.counter }}" name="survey{{survey.id}}" value="{{choice.id}}">
+                                        <span class="tasks-list-mark tasks-list-radio"></span>
+                                    {% endif %}
+                                    <span class="tasks-list-desc">{{choice.option}}</span>
+                                </label>
+
+                            <br>
+                        {% endfor %}
+                        </div>
+                        <br>
+                        <input class="btn btn-primary survey-vote-btn" name="{{survey.id}}" value="{% trans 'Vote'%}" type="button">
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="survey-results">
+
+                    {% for choice in survey.choices.all %}
+                        <div class="progress show-voted-users {% if choice|choice_votes > 0 %} has-votes {% endif %}" title="{{choice|choice_percentage}}">
+                            <div class="progress-bar progress-bar-custom {% if choice|user_voted_for_choice:request %} user-vote {% endif %}" role="progressbar" aria-valuenow="{{choice|choice_percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{choice|choice_percentage}};">
+                                <span style="width:{{choice|choice_percentage}}; min-width:300px;">{{choice.option}} - {{choice.votes.all.count}} {% if choice|choice_votes == 1 %} {% trans "vote" %} {% else %} {% trans "votes" %} {% endif %}</span>
+                            </div>
+                        </div>
+                        <div class="user-pics hidden">
+                            {% for user in choice|users_from_choice %}
+                                <a href="{% url "userprofile:user" user_id=user.id %}">
+                                    <img src="{{ user.telegramuser.avatar_url }}" alt="" class="avatar img-circle"
+                                    title="{% if user.first_name %}{{user.first_name}}{% else %}{{user.username}}{% endif %}"
+                                    data-toggle="tooltip" data-placement="bottom" />
+                                </a>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+
+            </div>
+        {% endif %}
+
+        {% if user == survey.creator or survey|user_is_admin_for_survey:user %}
+            {% include "assets/survey_options.html" with survey=survey votes=survey.votes.all %}
+        {% endif %}
+    </p>
