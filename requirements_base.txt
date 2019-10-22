@@ -6,7 +6,7 @@ chardet==2.3.0
 requests==2.11.0
 telepot==8.3
 urllib3==1.16
-Pillow==3.3.0
+Pillow==6.2.0
 beautifulsoup4==4.5.1
 django-compressor==2.1
 django-appconf==1.0.2
